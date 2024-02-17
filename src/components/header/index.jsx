@@ -34,10 +34,8 @@ export default function Index() {
         gsap.fromTo(".dropdownProjectImgWrapper", { x: 30 }, { x: 0, ease: "none", duration: .4 })
         gsap.fromTo(".dropdownProjectImgWrapper", { opacity: 0 }, { opacity: 1, ease: "none", duration: .7 })
 
-        gsap.fromTo(".dropdownProjectMain > *", { y: -20 }, { y: 0, ease: "power1.out", stagger: 0.15, duration: .2 })
+        gsap.fromTo(".dropdownProjectMain > *", { y: -10 }, { y: 0, ease: "power1.out", stagger: 0.15, duration: .2 })
         gsap.fromTo(".dropdownProjectMain > *", { opacity: 0 }, { opacity: 1, ease: "power1.out", stagger: 0.15, duration: .2 })
-
-
     }, [dropdownProject])
 
     return (
@@ -47,7 +45,7 @@ export default function Index() {
             </div>
             <nav className="nav">
                 <a href="" className="navLink">home</a>
-                <div className="dropdown" onMouseEnter={() => setIsDropdownActive(true)}>
+                <div className="dropdown" onMouseEnter={() => setIsDropdownActive(true)} onMouseLeave={() => setIsDropdownActive(false)}>
                     <div className={`dropdownMenu ${isDropdownActive ? "active" : ''}`}>
                         <div className="dropdownMenuTitles">
                             {dropdownContent.map((el, i) => {
