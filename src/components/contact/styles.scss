@@ -1,0 +1,54 @@
+.contactWrapper {
+    padding: 0 10rem 4rem;
+    text-align: center;
+
+    h1 {
+        font-size: 2rem;
+        text-transform: capitalize;
+        margin-bottom: .25rem;
+    }
+
+    p {
+        margin-bottom: 2.25rem;
+    }
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    input, textarea {
+        width: 55%;
+        font-family: inherit;
+        font-size: 1rem;
+        padding: .75rem 1.25rem;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    input[type="submit"] {
+        width: fit-content;
+        background-color: transparent;
+        outline: none;
+        border: 1px solid #000;
+        cursor: pointer;
+    }
+}
+
+.snackbar {
+    position: absolute;
+    bottom: 4rem;
+    left: 4rem;
+    border: 1px solid #000;
+    border-radius: .25rem;
+
+    div {
+        font-size: .75rem;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+}

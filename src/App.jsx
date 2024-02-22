@@ -3,6 +3,7 @@ import Hero from './components/hero/index.jsx';
 import Projects from './components/projects/index.jsx';
 import Features from './components/features/index.jsx';
 import Videos from './components/videos/index.jsx';
+import Contact from './components/contact/index.jsx';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <Projects />
       <Features />
       <Videos />
+      <Contact />
     </>
   )
 }
