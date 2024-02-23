@@ -2,6 +2,7 @@ import Header from './components/header/index.jsx';
 import Footer from './components/footer/Index.jsx';
 import { Routes, Route } from "react-router-dom";
 import Home from './pages/Home.jsx';
+import Projects from './pages/Projects.jsx';
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-              </Routes>
+        <Route path="/projects" element={<Projects />} />
+      </Routes>
       <Footer />
     </>
   )
