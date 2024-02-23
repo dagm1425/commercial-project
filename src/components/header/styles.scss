@@ -110,13 +110,13 @@
 .dropdownProjectMain {
     width: 70%;
 
-    & p:nth-child(1) {
+    &p:nth-child(1) {
         font-size: 14px;
         font-weight: 700;
         margin-bottom: 0.5rem;
     }
 
-    & p:nth-child(2) {
+    &p:nth-child(2) {
         font-size: 12px;
     }
 }
@@ -129,11 +129,11 @@
 .dropdownProjectImgWrapper {
     width: 200px;
     height: 100px;
-}
 
-.dropdownProjectImg {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 0.25rem;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 0.25rem;
+    }
 }

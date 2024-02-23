@@ -72,7 +72,6 @@ export default function Index() {
                             <div className="dropdownProjectImgWrapper">
                                 <img src={`/images/${dropdownContent[dropdownProject].src}`} 
                                      alt={dropdownContent[dropdownProject].title}
-                                     className="dropdownProjectImg"
                                 />
                             </div>
                         </div>
