@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import "./styles.scss"
 import { MdKeyboardArrowRight } from "react-icons/md";
 import gsap from 'gsap';
+import { Link } from "react-router-dom";
 
 export default function Index() {
     const [isDropdownActive, setIsDropdownActive] = useState(false);
@@ -44,7 +45,7 @@ export default function Index() {
                 Addis Skyline Realty
             </div>
             <nav className="nav">
-                <a href="" className="navLink">home</a>
+                <Link to="/" className="navLink">home</Link>
                 <div className="dropdown" onMouseEnter={() => setIsDropdownActive(true)} onMouseLeave={() => setIsDropdownActive(false)}>
                     <div className={`dropdownMenu ${isDropdownActive ? "active" : ''}`}>
                         <div className="dropdownMenuTitles">
@@ -76,10 +77,10 @@ export default function Index() {
                             </div>
                         </div>
                     </div>
-                    <a href="" className="navLink">projects</a>
+                    <Link to="/projects" className="navLink">projects</Link>
                 </div>
-                <a href="" className="navLink">about</a>
-                <a href="" className="navLink">contact</a>
+                <Link to="/about" className="navLink">about</Link>
+                <Link to="/contact" className="navLink">contact</Link>
             </nav>
         </header>
     )
