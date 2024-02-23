@@ -38,7 +38,7 @@ export default function Index() {
             <form className="contactForm" onSubmit={sendEmail}>
                 <input type="text" placeholder="Name" name="user_name" required />
                 <input type="text" placeholder="Email" name="user_email" required />
-                <input type="text" placeholder="Subject" name="" required />
+                <input type="text" placeholder="Subject" name="subject" required />
                 <textarea placeholder="Message" name="user_message" rows={15} cols={87} required ></textarea>
                 <input type="submit" value="Submit" />
             </form>
