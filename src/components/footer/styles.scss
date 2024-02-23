@@ -1,0 +1,58 @@
+.footerWrapper {
+    padding: 4.5rem 5rem 2.5rem;
+    background-color: beige;
+}
+
+.footerContent {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-bottom: 3rem;
+}
+
+.leftDiv {
+    h2 {
+        text-transform: capitalize;
+        line-height: normal;
+        margin-bottom: .75rem;
+    }
+
+    p {
+        text-align: left;
+    }
+}
+
+.centerDiv {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+
+    h3 {
+        text-transform: uppercase;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+        text-align: center;
+        text-transform: capitalize;
+    }
+}
+
+.rightDiv {
+    h3 {
+        text-transform: uppercase;
+        margin-bottom: .75rem;
+    }
+
+    .socialsWrapper a {
+        font-size: 1.25rem;
+        color: inherit;
+        margin-right: .75rem;
+    }
+}
+
+.footerNote {
+    padding-top: .75rem;
+    text-align: center;
+}

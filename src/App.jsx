@@ -4,6 +4,7 @@ import Projects from './components/projects/index.jsx';
 import Features from './components/features/index.jsx';
 import Videos from './components/videos/index.jsx';
 import Contact from './components/contact/index.jsx';
+import Footer from './components/footer/index.jsx';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <Features />
       <Videos />
       <Contact />
+      <Footer />
     </>
   )
 }
