@@ -1,0 +1,19 @@
+.projectFeaturesWrapper {
+    display: flex;
+    gap: 2.75rem;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5rem 0;
+}
+
+.projectFeature {
+    display: flex;
+    width: 22%;
+    flex-direction: column;
+    justify-content: center;
+    gap: .75rem;
+
+    h3, p {
+        text-align: center;
+    }
+}

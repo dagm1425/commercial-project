@@ -9,21 +9,25 @@ export default function Index() {
     const [dropdownProject, setDropdownProject] = useState(0);
     const dropdownContent = [
         { 
+            id: "piazza-downtown",
             title: "Piazza Downtown Luxury Apartments",
             desc: "Expertly crafted apartments that boast thoughtful floor plans, top-notch infrastructure, and exceptional finishes.",
             src: "piazza.png"
         },
         { 
+            id: "bole-skyline",
             title: "Bole Skyline Luxury Apartments",
             desc: "Rise above the ordinary and experience a new level of sophistication at Bole's most anticipated residential development.",
             src: "skyline.png"
         },
         { 
+            id: "addis-central",
             title: "Addis Central Luxury Apartments",
             desc: "Addis Central Tower's central location, international standards, and original architecture promise an unmatched living experience.",
             src: "central.png"
         },
         { 
+            id: "addis-westview",
             title: "Addis Westview Standard Apartments",
             desc: "Experience international standards, modern amenities, and a convenient location, all within your budget.",
             src: "westview.png"
@@ -51,12 +55,12 @@ export default function Index() {
                         <div className="dropdownMenuTitles">
                             {dropdownContent.map((el, i) => {
                                 return (
-                                    <div key={i} className={`dropdownMenuTitleWrapper ${dropdownProject === i ? "active" : ""}`} onMouseEnter={() => setDropdownProject(i)}>
+                                    <Link key={i} to={`/projects/${dropdownContent[dropdownProject].id}`} className={`dropdownMenuLink ${dropdownProject === i ? "active" : ""}`} onMouseEnter={() => setDropdownProject(i)}>
                                         <MdKeyboardArrowRight />
                                         <p className="dropdownMenuTitle">
                                             {el.title.split(" ", 2).join(" ")}
                                         </p>    
-                                    </div>
+                                    </Link>
                                 )
                             })}
                         </div>
@@ -68,7 +72,7 @@ export default function Index() {
                                 <p>
                                     {dropdownContent[dropdownProject].desc}
                                 </p>
-                                <a href='#' className="dropdownProjectLink">Learn more</a>
+                                <Link to={`/projects/${dropdownContent[dropdownProject].id}`} className="dropdownProjectLink">Learn more</Link>
                             </div>
                             <div className="dropdownProjectImgWrapper">
                                 <img src={`/images/${dropdownContent[dropdownProject].src}`} 

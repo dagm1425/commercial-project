@@ -2,25 +2,30 @@ import "./styles.scss";
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Index() {
     const projects = [
         { 
+            id: "addis-westview",
             label: "Standard",
             title: "Addis Westview",
             src: "westview.png"
         },
         { 
+            id: "piazza-downtown",
             label: "Luxury",
             title: "Piazza Downtown",
             src: "piazza.png"
         },
         { 
+            id: "bole-skyline",
             label: "Luxury",
             title: "Bole Skyline",
             src: "skyline.png"
         }
     ];
+
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -53,7 +58,7 @@ export default function Index() {
             <div className="projectsContent">
                 {projects.map((project, i) => {
                     return (
-                        <a key={i} className="projectLink">
+                        <Link key={i} to={`/projects/${project.id}`} className="projectLink">
                             <img src={`/images/${project.src}`} 
                                 alt={project.title}
                             />
@@ -61,7 +66,7 @@ export default function Index() {
                                 <p>{project.label}</p>
                                 <p className="projectTitle">{project.title}</p>
                             </div>
-                        </a>
+                        </Link>
                     )
                 })}
             </div>

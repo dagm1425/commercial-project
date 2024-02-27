@@ -1,0 +1,29 @@
+.amenitiesWrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    justify-items: center;
+    gap: 2rem;
+    padding: 4rem 10rem;
+}
+
+.amenity {
+    padding: 1.5rem .75rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: center;
+    
+    h3 {
+        margin-bottom: .5rem;
+    }
+
+    .iconWrapper {
+        width: 72px;
+        height: 72px;
+        margin: 0 auto 1rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}

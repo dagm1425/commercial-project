@@ -1,0 +1,63 @@
+.videosWrapper {
+    padding: 4rem 10rem;
+}
+
+.videosSlidder {
+    display: flex;
+    margin: 0 auto;
+    overflow: hidden;
+    // padding-left: 13%;
+    // gap: 1.5rem;
+
+    .videoContent {
+        // flex-shrink: 0;
+        transition: translate 300ms ease-in-out;
+    }
+
+    .videoContent > p {
+        text-align: center;
+        margin-top: .5rem;
+    }
+
+    .thumbnailWrapper {
+        width: 70%;
+        height: auto;
+        background-color: aliceblue;
+    }
+
+    .thumbnailWrapper > img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .thumbnailWrapper > p {
+        position: absolute;
+        bottom: -14px;
+        opacity: .8;
+    }
+}
+
+.sliderController {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 1rem;
+    gap: 1.75rem;
+
+    .buttonsWrapper {
+        button:first-child {
+            margin-right: 1.5rem;
+        }
+    
+        button {
+            font-size: 2.5rem;
+            margin-top: .75rem;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+    }
+}
