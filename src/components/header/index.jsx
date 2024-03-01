@@ -12,29 +12,25 @@ export default function Index() {
             id: "piazza-downtown",
             title: "Piazza Downtown Luxury Apartments",
             desc: "Expertly crafted apartments that boast thoughtful floor plans, top-notch infrastructure, and exceptional finishes.",
-            src: "piazza.png"
         },
         { 
             id: "bole-skyline",
             title: "Bole Skyline Luxury Apartments",
             desc: "Rise above the ordinary and experience a new level of sophistication at Bole's most anticipated residential development.",
-            src: "skyline.png"
         },
         { 
-            id: "addis-central",
-            title: "Addis Central Luxury Apartments",
+            id: "lagare-central",
+            title: "lagare Central Luxury Apartments",
             desc: "Addis Central Tower's central location, international standards, and original architecture promise an unmatched living experience.",
-            src: "central.png"
         },
         { 
             id: "addis-westview",
             title: "Addis Westview Standard Apartments",
             desc: "Experience international standards, modern amenities, and a convenient location, all within your budget.",
-            src: "westview.png"
         },
     ];
-
-
+    const projectName = dropdownContent[dropdownProject].id.split("-")[0];
+    
     useEffect(() => {
         gsap.fromTo(".dropdownProjectImgWrapper", { x: 30 }, { x: 0, ease: "none", duration: .4 })
         gsap.fromTo(".dropdownProjectImgWrapper", { opacity: 0 }, { opacity: 1, ease: "none", duration: .7 })
@@ -75,7 +71,7 @@ export default function Index() {
                                 <Link to={`/projects/${dropdownContent[dropdownProject].id}`} className="dropdownProjectLink">Learn more</Link>
                             </div>
                             <div className="dropdownProjectImgWrapper">
-                                <img src={`/images/${dropdownContent[dropdownProject].src}`} 
+                                <img src={`/images/projects/${projectName}/${projectName}.png`} 
                                      alt={dropdownContent[dropdownProject].title}
                                 />
                             </div>

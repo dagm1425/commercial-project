@@ -10,19 +10,16 @@ export default function Index() {
             id: "addis-westview",
             label: "Standard",
             title: "Addis Westview",
-            src: "westview.png"
         },
         { 
             id: "piazza-downtown",
             label: "Luxury",
             title: "Piazza Downtown",
-            src: "piazza.png"
         },
         { 
             id: "bole-skyline",
             label: "Luxury",
             title: "Bole Skyline",
-            src: "skyline.png"
         }
     ];
 
@@ -57,9 +54,11 @@ export default function Index() {
             </div>
             <div className="projectsContent">
                 {projects.map((project, i) => {
+                    const projectName = project.id.split("-")[0];
+
                     return (
                         <Link key={i} to={`/projects/${project.id}`} className="projectLink">
-                            <img src={`/images/${project.src}`} 
+                            <img src={`/images/projects/${projectName}/${projectName}.png`} 
                                 alt={project.title}
                             />
                             <div className="projectDesc">

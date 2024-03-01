@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import "./styles.scss";
 
 export default function Index({ project }) {
+    const projectName = project.id.split("-")[0];
+    
     return (
         <div className="projectWrapper">
-            <div style={{ backgroundImage: `url("/images/${project.src}")` }} className="projectHero">
+            <div style={{ backgroundImage: `url("/images/projects/${projectName}/living-room.png")` }} className="projectHero">
                 <p className="snackBar">
                     <Link to='/'>home</Link> &gt; 
                     <Link to={'/projects'}>projects</Link> &gt;

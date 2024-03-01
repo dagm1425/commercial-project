@@ -14,7 +14,6 @@ export default function Project() {
             desc: "More than just affordable, Westview Standard is your gateway to a better life in Addis Ababa. Experience international standards, modern amenities, and a convenient location, all within your budget.",
             specs: { floors: "11", bedrooms: "1-3", minMaxArea: "78-120", builtUpArea: "1558" },
             location: "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d492.56212615924943!2d38.73318242430231!3d9.018343685417916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2set!4v1708955993214!5m2!1sen!2set",
-            src: "woman-with-design-book.png",
         },
         {
             id: "piazza-downtown",
@@ -22,7 +21,6 @@ export default function Project() {
             desc: "Experience luxury living in Piazza Midtown. Our expertly crafted apartments boast thoughtful floor plans, top-notch infrastructure, and exceptional finishes. Perfectly situated in the heart of Piazza, you'll enjoy effortless access to everything this vibrant district offers.",
             specs: { floors: "16", bedrooms: "1-3", minMaxArea: "98-175", builtUpArea: "1527" },
             location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d492.54336340047695!2d38.75095361677435!3d9.03208469945599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b8f5efcffebd3%3A0xda821c73ef928f93!2sPiazza%2C%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1708955413945!5m2!1sen!2set",
-            src: "furnishing-materials.png",
         },
         {
             id: "bole-skyline",
@@ -30,15 +28,13 @@ export default function Project() {
             desc: "Rise above the ordinary and experience a new level of sophistication at Bole's most anticipated residential development. From stunning views to spacious layouts, every detail is meticulously curated to offer an unparalleled living experience.",
             specs: { floors: "19", bedrooms: "1-3", minMaxArea: "105-182", builtUpArea: "1647" },
             location: "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d985.1833621678446!2d38.79718850038464!3d8.99665675289613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sbole!5e0!3m2!1sen!2set!4v1708955647521!5m2!1sen!2set",
-            src: "woman-with-design-book.png",
         },
         {
-            id: "addis-central",
-            title: "addis central luxury apartments",
+            id: "lagare-central",
+            title: "lagare central luxury apartments",
             desc: "Immerse yourself in the vibrant pulse of Addis Ababa. Addis Central Tower's central location, international standards, and original architecture promise an unmatched living experience.",
             specs: { floors: "14", bedrooms: "1-3", minMaxArea: "87-110", builtUpArea: "1486" },
             location: "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d246.28497630880852!2d38.75150727629101!3d9.012605792975558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sstadium!5e0!3m2!1sen!2set!4v1708955800401!5m2!1sen!2set",
-            src: "woman-with-design-book.png",
         },
     ];
     const features = [
@@ -81,15 +77,17 @@ export default function Project() {
             desc: "Common areas like entrance and lobby are designed to be warm and welcoming for you and your family",
             src: "lobby.png"
         },
-
     ];
     const project = projects.find((project) => project.id === id);
+    const projectName = project.id.split("-")[0];
+    const imgFileNames = [`${projectName}.png`, "living-room.png", "bathroom.png", "bedroom.png"];
+    const projectImg = imgFileNames.map((imgFileName) => ({ src:`/images/projects/${projectName}/` + imgFileName, alt: `${imgFileName.split(".")[0]}` }));
 
     return (
         <>
             <ProjectHero project={project} />
             <Features features={features} />
-            <ProjectImgSlider />
+            <ProjectImgSlider projectImg={projectImg} />
             <Amenities amenities={amenities} />
             <Location location={project.location} />
         </>
