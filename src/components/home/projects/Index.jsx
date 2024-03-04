@@ -58,7 +58,7 @@ export default function Index() {
 
                     return (
                         <Link key={i} to={`/projects/${project.id}`} className="projectLink">
-                            <img src={`/images/projects/${projectName}/${projectName}.png`} 
+                            <img src={`/images/projects/${projectName}/${projectName}-ext.png`} 
                                 alt={project.title}
                             />
                             <div className="projectDesc">

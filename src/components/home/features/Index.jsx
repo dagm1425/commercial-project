@@ -25,12 +25,12 @@ export default function Index() {
                     <p>{features[0].desc}</p>
                 </div>
                 <div className="featureImgWrapper">
-                    <img src={`/images/${features[0].src}`} alt={features[0].title} />
+                    <img src={`/images/other/${features[0].src}`} alt={features[0].title} />
                 </div>
             </div>
             <div className="feature">
                 <div className="featureImgWrapper">
-                    <img src={`/images/${features[1].src}`} alt={features[1].title} />
+                    <img src={`/images/other/${features[1].src}`} alt={features[1].title} />
                 </div>
                 <div className="featureMain">
                     <p>{features[1].label}</p>

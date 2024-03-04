@@ -50,7 +50,7 @@ export default function Index() {
                             <Link to={`/projects/${project.id}`}>Learn more</Link>
                         </div>
                         {isZeroEven(i) && <div className="projectImgWrapper">
-                            <img src={`/images/${project.src}`} alt={project.title} />
+                            <img src={`/images/projects/${projectName}/${projectName}.png`} alt={project.title} />
                         </div>}
                     </div>
 
