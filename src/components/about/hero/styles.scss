@@ -1,0 +1,46 @@
+.aboutWrapper {
+    height: 450px; 
+    background-image: url("/images/projects/bole/living-room.png");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    color: #fff;
+    padding: 3rem 5rem;
+
+    .aboutMain {
+        width: 50%;
+        padding-left: 3rem;
+
+        p:nth-child(2) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    h1 {
+        font-size: 3rem;
+        font-weight: 600;
+        line-height: 2.75rem;
+        text-transform: capitalize;
+        margin-bottom: 1.5rem;
+    }
+
+    .snackBar {
+        margin-bottom: 2rem;
+
+        a, span {
+            font-size: 12px;
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: .125rem;
+        }
+
+        a:nth-child(1) {
+            margin-right: .375rem;
+        }
+
+        span {
+            margin-left: .375rem;
+        }
+    }
+}
