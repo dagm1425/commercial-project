@@ -1,0 +1,29 @@
+.statsWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    padding: 4rem 0;
+    margin: 1rem 0;
+
+    .statWrapper {
+        text-align: center;
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: .375rem;
+        }
+        p {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: .125rem;
+        }
+    }
+}
+
+.odometer.odometer-animating-up .odometer-ribbon-inner, .odometer.odometer-animating-down.odometer-animating .odometer-ribbon-inner {
+    -webkit-transition-duration: 5s !important;
+    -moz-transition-duration: 5s !important;
+    -ms-transition-duration: 5s !important;
+    -o-transition-duration: 5s !important;
+    transition-duration: 5s !important
+}
