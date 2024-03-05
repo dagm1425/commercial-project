@@ -16,12 +16,12 @@ export default function Index({ projectImg }) {
     }
 
     return (
-        <div className="videosWrapper">
-            <div className="videosSlidder">
+        <div className="sliderWrapper">
+            <div className="imgSlidder">
                 {projectImg.map((img, i) => {
                     return (
-                        <div key={i}  style={{ translate: `${-100 * imgIndex}%` }} className="videoContent">
-                            <div className="thumbnailWrapper">
+                        <div key={i}  style={{ translate: `${-100 * imgIndex}%` }} className="imgContent">
+                            <div className="imgWrapper">
                                 <img src={img.src} alt={img.alt} />
                             </div>
                         </div>
