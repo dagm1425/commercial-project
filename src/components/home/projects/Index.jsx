@@ -84,7 +84,7 @@ export default function Index() {
                 <p>explore a selection of our properties in greater depth</p>
                 <Link to="/projects">
                     <BsArrowRightShort />
-                    <span>see all projects</span>
+                    <span>view all projects</span>
                     <LuDot />
                 </Link>
             </div>
