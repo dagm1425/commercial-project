@@ -3,6 +3,8 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { BsArrowRightShort } from "react-icons/bs";
+import { LuDot } from "react-icons/lu";
 
 export default function Index() {
     const projects = [
@@ -33,24 +35,58 @@ export default function Index() {
         }, {
             opacity: 1,
             y: 0,
-            duration: .35,
+            duration: .4,
             ease: "power1.out",
-            stagger: 0.1,
+            stagger: .15,
             scrollTrigger: {
                 trigger: ".projectsContent",
-                start: "top 70%",
-                end: "+=100",
+                start: "top 63%",
+                end: "+=250",
+                markers: true
             },
         })
+        
+        // gsap.registerPlugin(ScrollTrigger);
+
+        // const lenis = new Lenis({
+        //     duration: 1.2,
+        //     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+        // })
+
+        // function raf(time) {
+        //     lenis.raf(time)
+        //     requestAnimationFrame(raf)
+        // }
+
+        // requestAnimationFrame(raf)
+
+        // // eslint-disable-next-line no-unused-vars
+        // const tl = gsap.timeline({
+        //     scrollTrigger: {
+        //     trigger: '.projectsContent',
+        //     start: "top 70%",
+        //     end: "+=450",
+        //     scrub: true
+        //     }
+        // })
+        // .to('.projectLink', {
+        //     stagger: .2,
+        //     y: 0,
+        //     scrub: true
+        // })
     }, [])
 
     return (
-        <section className="projectsWrapper">
+        <section className="projects">
             <div className="projectsHeader">
                 <p>featured projects</p>
                 <h1>properties on the rise</h1>
                 <p>explore a selection of our properties in greater depth</p>
-                <button>view all projects</button>
+                <Link to="/projects">
+                    <BsArrowRightShort />
+                    <span>see all projects</span>
+                    <LuDot />
+                </Link>
             </div>
             <div className="projectsContent">
                 {projects.map((project, i) => {
@@ -58,12 +94,14 @@ export default function Index() {
 
                     return (
                         <Link key={i} to={`/projects/${project.id}`} className="projectLink">
-                            <img src={`/images/projects/${projectName}/${projectName}-ext.png`} 
-                                alt={project.title}
-                            />
+                            <div className="linkImgWrapper">
+                                <img src={`/images/projects/${projectName}/${projectName}-ext.png`} 
+                                    alt={project.title}
+                                />
+                            </div>
                             <div className="projectDesc">
                                 <p>{project.label}</p>
-                                <p className="projectTitle">{project.title}</p>
+                                <p><BsArrowRightShort />{project.title}</p>
                             </div>
                         </Link>
                     )
