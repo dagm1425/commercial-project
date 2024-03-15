@@ -2,10 +2,12 @@
     display: flex;
     justify-content: center;
     gap: 4rem;
-    padding: 4rem 0;
-    margin: 1rem 0;
+    padding: 6rem 0;
+    border-top: 1px solid #e7d9c3;
+    border-bottom: 1px solid #e7d9c3;
 
     .statWrapper {
+        position: relative;
         text-align: center;
 
         h1 {
@@ -17,7 +19,22 @@
             text-transform: uppercase;
             letter-spacing: .125rem;
         }
+
+        .statIconWrapper {
+            display: grid;
+            place-items: center;
+            height: 64px;
+            width: 64px;
+            margin: 0 auto 1.5rem;
+            background-color: #f3eee7;
+            border-radius: 50%;
+
+            svg {
+                font-size: 2rem;
+            }
+        }
     }
+
 }
 
 .odometer.odometer-animating-up .odometer-ribbon-inner, .odometer.odometer-animating-down.odometer-animating .odometer-ribbon-inner {
