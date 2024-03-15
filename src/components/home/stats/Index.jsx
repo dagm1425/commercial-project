@@ -21,7 +21,7 @@ export default function Index() {
             icon: <MdConstruction />
         },
         {
-            label: "billion birr in portfolio value",
+            label: "billion birr in value",
             value: "2.86",
             icon: <GiProfit />
         },
