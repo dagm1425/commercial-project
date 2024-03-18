@@ -1,39 +1,72 @@
 .contactWrapper {
-    padding: 0 10rem 4rem;
+    padding: 5rem 4rem;
+    background-color: #f3eee7;
     text-align: center;
+}
+
+.contactHeader {
+    padding-bottom: 1rem;
 
     h1 {
         font-size: 2rem;
         text-transform: capitalize;
         margin-bottom: .25rem;
     }
+}
+
+.contactMain {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 4rem;
+}
+
+.contactInfo {
+    font-size: 14px;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: .025rem;
+    line-height: 1.5rem;
 
     p {
-        margin-bottom: 2.25rem;
+        margin-bottom: .75rem;
+        
+        span {
+            font-weight: 600;
+        }
     }
 }
 
 .contactForm {
     display: flex;
+    width: 50%;
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
 
     input, textarea {
-        width: 55%;
+        width: 100%;
         font-family: inherit;
         font-size: 1rem;
+        background-color: inherit;
         padding: .75rem 1.25rem;
+        outline: none;
+        border: 1px solid #000;
+        border-radius: .5rem;
     }
 
     textarea {
         resize: none;
     }
 
+    .userInfo {
+        display: flex;
+        width: 100%;
+        gap: 1.5rem;
+    }
+
     input[type="submit"] {
         width: fit-content;
         background-color: transparent;
-        outline: none;
         border: 1px solid #000;
         cursor: pointer;
     }

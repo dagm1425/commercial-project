@@ -33,18 +33,29 @@ export default function Index() {
 
     return (
         <div className="contactWrapper">
-            <h1>connect with us</h1>
-            <p>Connect with us to know more about our properties.</p>
-            <form className="contactForm" onSubmit={sendEmail}>
-                <input type="text" placeholder="Name" name="user_name" required />
-                <input type="text" placeholder="Email" name="user_email" required />
-                <input type="text" placeholder="Subject" name="subject" required />
-                <textarea placeholder="Message" name="user_message" rows={15} cols={87} required ></textarea>
-                <input type="submit" value="Submit" />
-            </form>
+            <div className="contactHeader">
+                <h1>connect with us</h1>
+                <p>Connect with us to know more about our properties.</p>
+            </div>
+            <div className="contactMain">
+                <div className="contactInfo">
+                    <p><span>address: </span>haya hulet, woreda 08, alemnesh plaza<br /> addis abeba, ethiopia.</p>
+                    <p><span>telephone: </span>+251 416 05 05/06/07</p>
+                    <p><span>email: </span><a href="#">info@asaitaproperties.com</a></p>
+                </div>
+                <form className="contactForm" onSubmit={sendEmail}>
+                    <div className="userInfo">
+                        <input type="text" placeholder="Name" name="user_name" required />
+                        <input type="text" placeholder="Email" name="user_email" required />
+                    </div>
+                    <input type="text" placeholder="Subject" name="subject" required />
+                    <textarea placeholder="Message" name="user_message" rows={7} cols={45} required ></textarea>
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
             {(isSendingMsg || isMsgSent || isMsgNotSent) && 
             <div className="snackbar">
-                <div className="text-slate-700 text-md font-semibold uppercase">
+                <div>
                     {isSendingMsg && "Sending message..."}
                     {isMsgSent && "Message sent!"}
                     {isMsgNotSent && "Message not sent!"} 
