@@ -1,4 +1,7 @@
+import { useEffect } from "react";
 import "./styles.scss";
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function Index() {
     const features = [
@@ -15,6 +18,50 @@ export default function Index() {
             src: "woman-with-design-book.png",
         },
     ];
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray(".feature").forEach((feature, index) => {
+            const featureImgWrapper = feature.querySelector(".featureImgWrapper");
+            const featureMain = feature.querySelector(".featureMain");
+            const featureImg = featureImgWrapper.querySelector("img");
+            const featureOverlay = featureImgWrapper.querySelector(".featureOverlay");
+            const x = (index % 2 === 0) ?  "-15%" : "15%"; 
+            const scrollTriggerConfig = {
+                trigger: feature,
+                start: "top 80%",
+                end: "+=200",
+            };
+
+            gsap.to(featureOverlay, {
+              width: "0%",
+              duration: 1.4,
+              ease: "Power2.easeInOut",
+              scrollTrigger: scrollTriggerConfig,
+            });
+
+            gsap.fromTo(featureMain, {
+              x: x,
+              opacity: 0
+            }, {
+              x: 0,
+              opacity: 1,
+              duration: 1.4,
+              ease: "Power2.easeInOut",
+              scrollTrigger: scrollTriggerConfig,
+            });
+
+            gsap.fromTo(featureImg, {
+                scale: 1.4  
+              }, {
+                scale: 1,
+                duration: 1.4,
+                ease: "Power2.easeInOut",
+                scrollTrigger: scrollTriggerConfig,
+              });
+          });
+    }, []);
 
     return (
         <div className="featuresWrapper">
