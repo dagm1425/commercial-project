@@ -1,7 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./styles.scss";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import emailjs from "@emailjs/browser";
 import { FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
@@ -9,6 +10,11 @@ import { LuDot } from "react-icons/lu";
 import { BsArrowRightShort } from "react-icons/bs";
 
 export default function Index() {
+    const form = useRef(null);
+    const [isSendingMsg, setIsSendingMsg] = useState(false);
+    const [isMsgSent, setIsMsgSent] = useState(false);
+    const [isMsgNotSent, setIsMsgNotSent] = useState(false);
+    
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
@@ -28,6 +34,29 @@ export default function Index() {
         })
     }, []);
 
+    
+    const sendEmail = (e) => {
+        e.preventDefault();
+        setIsSendingMsg(true)
+    
+        emailjs.sendForm('service_id', 'template_id', form.current, 'YOUR_PUBLIC_KEY')
+          .then(() => {
+            (e.target).reset();
+            setIsSendingMsg(false);
+            setIsMsgSent(true);
+            setTimeout(() => {
+                setIsMsgSent(false);
+            }, 3000);
+          }, (error) => {
+              setIsMsgNotSent(true);
+              console.log(error.text);
+              setTimeout(() => {
+                setIsMsgNotSent(false);
+            }, 3000);
+          });
+        
+          setIsMsgSent(false);
+    };
     return (
         <div className="contactWrapper2">
             <div className="contactInfo1">
@@ -52,7 +81,7 @@ export default function Index() {
                     </div>
                 </div>
             </div>
-            <form className="contactForm1">
+            <form ref={form} className="contactForm1" onSubmit={sendEmail}>
                 <div className="userInfo1">
                     <div className="formGroup">
                         <label htmlFor="user_name">name</label>
@@ -77,6 +106,14 @@ export default function Index() {
                     <BsArrowRightShort />
                 </button>
             </form>
+            {(isSendingMsg || isMsgSent || isMsgNotSent) && 
+            <div className="snackbar">
+                <div>
+                    {isSendingMsg && "Sending message..."}
+                    {isMsgSent && "Message sent!"}
+                    {isMsgNotSent && "Message not sent!"} 
+                </div>
+            </div>}
         </div>
     )
 }
