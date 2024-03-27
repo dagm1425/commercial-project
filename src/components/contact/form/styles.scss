@@ -1,0 +1,141 @@
+.contactWrapper2 {
+    display: flex;
+    justify-content: center;
+    gap: 7rem;
+    padding: 5rem 7rem;
+}
+
+.contactItem {
+    margin-bottom: 2.5rem;
+
+    p:nth-child(1) {
+        font-weight: 700;
+        margin-bottom: .5rem;
+        text-transform: uppercase;
+    }
+
+    p:nth-child(2) {
+        text-transform: capitalize;
+    }
+
+    .socialsWrapper1 {
+        margin-top: .925rem;
+        svg {
+            font-size: 1.375rem;
+            color: #000;
+            margin-right: .75rem;
+        }
+    }
+}
+
+.contactForm1 {
+    width: 50%;
+
+    button {
+            position: relative;
+            display: inline-flex;
+            width: fit-content;
+            align-items: center;
+            text-transform: capitalize;
+            padding: .875rem 1.375rem .875rem 2.5rem;
+            margin-top: 1.5rem;
+            color: #000;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            border: none;
+            outline: none;
+            border-radius: .25rem;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 300ms ease-out;
+    
+            span {
+                position: relative;
+                font-weight: 600;
+                text-transform: uppercase;
+                z-index: 1;
+            }
+    
+            & svg:first-child {
+                content: "";
+                position: absolute;
+                left: .5rem;
+                font-size: 2.25rem;
+                transition: scale 300ms ease-out;
+            }
+    
+            & svg:last-child {
+                font-size: 1.825rem;   
+                opacity: 0;
+                position: absolute;
+            }
+    
+            &:hover {
+                color: #000;
+                background-color: #fff;
+                padding: .875rem 2.75rem .875rem 1.275rem;
+            }
+    
+            &:hover span {
+                color: #fff;
+            }
+    
+            &:hover svg:first-child {
+                color: #681919;
+                scale: 50;
+            }
+    
+            &:hover svg:last-child {
+                color: #fff;
+                animation: slideInRight 200ms ease-in-out;     
+                animation-fill-mode: forwards;  
+            }
+    
+            @keyframes slideInRight {
+                from { 
+                    opacity: 0;
+                    right: 1.5rem;
+                 } 
+                to { 
+                    opacity: 1;
+                    right: .625rem;
+                 } 
+            }
+    }
+}
+
+.formGroup {
+    margin-bottom: 3.5rem;
+    width: 100%;
+
+    input, textarea {
+        width: 100%;
+        padding: .75rem 0;
+        font-size: 1.125rem;
+        border: none;
+        outline: none;
+        border-bottom: 1.125px solid ;
+        border-color: rgba(0, 0, 0, 0.25);
+        transition: border-color 200ms ease-out;
+
+        &:focus {
+            border-color: rgba(0, 0, 0, 0.8);
+        }
+    }
+
+    label {
+        display: block;
+        font-size: .875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: .725rem;
+    }
+
+    textarea {
+        resize: none;
+    }
+}
+
+.userInfo1 {
+    display: flex;
+    gap: 2rem;
+}
