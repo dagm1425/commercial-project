@@ -1,87 +1,87 @@
 .contactWrapper {
-    padding: 5rem 4rem;
+    height: 55vh;
+    display: grid;
+    place-items: center;
     background-color: #f3eee7;
-    text-align: center;
-}
-
-.contactHeader {
-    padding-bottom: 1rem;
-
-    h1 {
-        font-size: 2rem;
-        text-transform: capitalize;
-        margin-bottom: .25rem;
-    }
-}
-
-.contactMain {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 4rem;
-}
-
-.contactInfo {
-    font-size: 14px;
-    text-align: left;
-    text-transform: uppercase;
-    letter-spacing: .025rem;
-    line-height: 1.5rem;
-
-    p {
-        margin-bottom: .75rem;
-        
-        span {
-            font-weight: 600;
-        }
-    }
-}
-
-.contactForm {
-    display: flex;
-    width: 50%;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-
-    input, textarea {
-        width: 100%;
-        font-family: inherit;
-        font-size: 1rem;
-        background-color: inherit;
-        padding: .75rem 1.25rem;
-        outline: none;
-        border: 1px solid #000;
-        border-radius: .5rem;
-    }
-
-    textarea {
-        resize: none;
-    }
-
-    .userInfo {
-        display: flex;
-        width: 100%;
-        gap: 1.5rem;
-    }
-
-    input[type="submit"] {
-        width: fit-content;
-        background-color: transparent;
-        border: 1px solid #000;
-        cursor: pointer;
-    }
-}
-
-.snackbar {
-    position: absolute;
-    bottom: 4rem;
-    left: 4rem;
-    border: 1px solid #000;
-    border-radius: .25rem;
 
     div {
-        font-size: .75rem;
-        font-weight: 400;
-        text-transform: uppercase;
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        a {
+            position: relative;
+            left: 50%; // not applied in other sections
+            transform: translateX(-50%); // not applied in other sections
+            display: inline-flex;
+            width: fit-content;
+            align-items: center;
+            text-decoration: none;
+            text-transform: capitalize;
+            padding: .875rem 1.375rem .875rem 2.5rem;
+            margin-top: 3rem;
+            color: #000;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            border: none;
+            outline: none;
+            border-radius: .25rem;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 300ms ease-out;
+
+            span {
+                position: relative;
+                font-weight: 600;
+                text-transform: uppercase;
+                z-index: 1;
+            }
+
+            & svg:first-child {
+                content: "";
+                position: absolute;
+                left: .5rem;
+                font-size: 2.25rem;
+                transition: scale 300ms ease-out;
+            }
+
+            & svg:last-child {
+                font-size: 1.825rem;   
+                opacity: 0;
+                position: absolute;
+            }
+
+            &:hover {
+                color: #000;
+                background-color: #fff;
+                padding: .875rem 2.75rem .875rem 1.275rem;
+            }
+
+            &:hover span {
+                color: #fff;
+            }
+
+            &:hover svg:first-child {
+                color: #681919;
+                scale: 45;
+            }
+
+            &:hover svg:last-child {
+                color: #fff;
+                animation: slideInRight 200ms ease-in-out;     
+                animation-fill-mode: forwards;  
+            }
+
+            @keyframes slideInRight {
+                from { 
+                    opacity: 0;
+                    right: 1.5rem;
+                } 
+                to { 
+                    opacity: 1;
+                    right: .625rem;
+                } 
+            }
+        }
     }
 }
