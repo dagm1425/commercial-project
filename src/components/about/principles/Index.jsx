@@ -15,7 +15,6 @@ export default function Index() {
             y: 0,
             duration: .7,
             ease: "power1.out",
-            stagger: 0.25,
             scrollTrigger: {
                 trigger: ".projectFeaturesWrapper",
                 start: "top 70%",
@@ -35,17 +34,23 @@ export default function Index() {
         {
             title: "EXECUTION",
             desc: "Execution is a fundamental principle at Addis Skyline Realty, shaping our approach to real estate development in Addis Ababa, Ethiopia. We pride ourselves on translating vision into reality with precision and efficiency. Through meticulous planning, proactive problem-solving, and seamless implementation, we ensure that each project is executed with the utmost professionalism.",
-        }
+                }
     ];
     
     return (
         <div className="projectFeaturesWrapper">
-            {principles.map((principle, i) => (
-                <div key={i} className="projectFeature">
-                    <h3>{principle.title}</h3>
-                    <p>{principle.desc}</p>
-                </div>
-            ))} 
+            <div className="projectFeaturesHeader">
+                <h2>our guiding principles</h2>
+                <hr/>
+            </div>
+            <div className="projectFeaturesGrid">
+                {principles.map((principle, i) => (
+                    <div key={i} className="projectFeature">
+                        <h3>{principle.title}</h3>
+                        <p>{principle.desc}</p>
+                    </div>
+                ))} 
+            </div>
         </div>
     )
 }
