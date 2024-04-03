@@ -32,41 +32,41 @@ export default function Index({ features }) {
             },
           });
           
+          // tl.addLabel("a"); 
+
+          // tl.to(".projectFeatures1 .projectFeature1:nth-child(2)", {
+          //   top: "20%",
+          //   // ease: "power1.out" 
+          //     // duration: 3
+          // }, "a")
+
           tl.addLabel("a"); 
-
-          tl.to(".projectFeatures1 .projectFeature1:nth-child(2)", {
-            top: "20%",
-            // ease: "power1.out" 
-              // duration: 3
-          }, "a")
-
-          tl.addLabel("b"); 
           
           tl.to(".projectFeatures1 .projectFeature1:nth-child(2)", {
             // top: "-0.725rem",
             top: "-0.125rem",
             // ease: "power1.out" 
             // duration: 5
-          }, "b")
+          }, "a")
             .to(".projectFeatures1 .projectFeature1:nth-child(1)", {
               scale: ".65",
               marginTop: "-3.1rem",
               // ease: "power1.out" 
               // duration: 5
-            }, "b")
+            }, "a")
             .to(".projectFeatures1 .projectFeature1:nth-child(3)", {
               top: "24%",
               // ease: "power1.out" 
               // duration: 5
-            }, "b")
-            .addLabel("c"); 
+            }, "a")
+            .addLabel("b"); 
           
           tl.to(".projectFeatures1 .projectFeature1:nth-child(3)", {
             // top: "0.725rem",
             top: "0.625rem",
             // ease: "power1.out" 
             // duration: 5
-          }, "c")
+          }, "b")
             .to(".projectFeatures1 .projectFeature1:nth-child(2)", {
               scale: "0.75",
               transformOrigin: "top",
@@ -75,13 +75,13 @@ export default function Index({ features }) {
               // top: "0.375rem",
               // marginTop: "-1.125rem",
               // duration: 5
-            }, "c")
+            }, "b")
             .to(".projectFeatures1 .projectFeature1:nth-child(4)", {
               top: "24%",
               // ease: "power1.out" 
               // duration: 5
-            }, "c")
-            .addLabel("d"); 
+            }, "b")
+            .addLabel("c"); 
 
             tl.to(".projectFeatures1 .projectFeature1:nth-child(3)", {
               scale: ".85",
@@ -89,7 +89,7 @@ export default function Index({ features }) {
               // ease: "power1.out" 
               // marginTop: "-0.975rem",
               // duration: 5
-            }, "d")
+            }, "c")
             // .to(".projectFeaturesWrapper2", {
             //   height: "230vh"
             // }, "d")
@@ -100,13 +100,13 @@ export default function Index({ features }) {
               // ease: "power1.out" 
               // marginTop: "-0.5rem",
               // duration: 5
-            }, "d")
+            }, "c")
             .to(".projectFeatures1 .projectFeature1:nth-child(4) .featureHeader > div", {
               marginTop: "-5.25rem",
-            }, "d")
+            }, "c")
             .to(".projectFeaturesWrapper2", {
               height: "190vh"
-            }, "d")
+            }, "c")
           
     }, []);
     
