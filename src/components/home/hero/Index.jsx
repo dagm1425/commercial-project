@@ -8,28 +8,22 @@ export default function Index() {
         gsap.registerPlugin(ScrollTrigger);
 
         gsap.to(".heroVid", {
-            scale: 1.15,
+            width: "98vw",
+            borderRadius: 0,
             ease: "none",
             scrollTrigger: {
                 trigger: ".heroVid",
-                start: "top center",
-                // end: "+=500",
+                start: "top 65%",
+                end: "+=350",
                 scrub: 1,
-                markers: false,
-                // pin: true,
-                // pinSpacing: false,
-                // anticipatePin: 0,
-                // onEnter: () => gsap.set(".heroVid", { autoAlpha: 1 }),
-                // onLeaveBack: () => gsap.set(".heroVid", { autoAlpha: 0 })
             },
-            // paused: true
         })
     }, [])
 
     const HeroVid = () => {
         return (
             <video src="/videos/hero-vid.mp4" autoPlay muted loop className="heroVid">
-            Your browser doesn&apos;t support the video tag.
+                Your browser doesn&apos;t support the video tag.
             </video>
         );
     };
@@ -39,8 +33,8 @@ export default function Index() {
             <div className="heroText">
                 <h1>Built with quality, delivered<br/> on time</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet est modi voluptas tenetur ullam impedit.<br/> Accusamus facilis natus voluptates eligendi placeat.</p>
-            </div>
-            <HeroVid />
+                            </div>
+            <HeroVid /> 
         </div>
     )
 }

@@ -1,5 +1,5 @@
 // .hero {
-// }
+    // }
 
 .heroText {
     padding: 6rem 5rem;
@@ -19,9 +19,10 @@
 
 .heroVid {
     display: block;
-    max-width: 87%;
-    max-height: 87%;
+    width: 60%;
     margin: 0 auto;
-    // width: 100%;
-    // height: 100%;
+    border: none;
+    border-radius: 25px;
 }
+
+
