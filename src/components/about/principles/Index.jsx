@@ -7,21 +7,22 @@ export default function Index() {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.fromTo(".projectFeature", {
+        gsap.fromTo(".projectFeaturesGrid", {
             opacity: 0,
-            y: "20vh",
+            y: "5vh",
         }, {
             opacity: 1,
             y: 0,
             duration: .7,
             ease: "power1.out",
             scrollTrigger: {
-                trigger: ".projectFeaturesWrapper",
-                start: "top 70%",
+                trigger: ".projectFeaturesGrid",
+                start: "top 80%",
                 end: "+=100",
             },
         })
-    }, [])
+    }, []);
+    
     const principles = [
         {
             title: "EXPERIENCE",
