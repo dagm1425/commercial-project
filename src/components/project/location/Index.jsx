@@ -26,10 +26,7 @@ export default function Index({ location }) {
 
     return (
         <div className="locationWrapper">
-            <h1>project location</h1>
-            <div className="location">
-                <iframe src={location} width="800" height="420" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+            <iframe src={location} width="100%" height="420" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
         </div>
     )
 }
