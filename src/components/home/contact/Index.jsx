@@ -1,10 +1,8 @@
 import "./styles.scss";
-import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { LuDot } from "react-icons/lu";
-import { BsArrowRightShort } from "react-icons/bs";
 import { useGSAP } from "@gsap/react";
+import MainBtn from "../../common/mainBtn/Index";
 
 export default function Index() {
     useGSAP(() => {
@@ -28,14 +26,8 @@ export default function Index() {
 
     return (
         <div className="contactWrapper">
-            <div>
-                <h1>Unlock the door<br /> to homeownership</h1>
-                <Link to="/contact">
-                    <LuDot />
-                    <span>contact us</span>
-                    <BsArrowRightShort />
-                </Link>
-            </div>
+            <h1>Unlock the door<br /> to homeownership</h1>
+            <MainBtn link="/contact">contact us</MainBtn>
         </div>
     )
 }

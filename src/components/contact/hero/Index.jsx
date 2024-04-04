@@ -1,18 +1,16 @@
-import { Link } from "react-router-dom";
 import "./styles.scss";
+import Overlay from "../../common/overlay/Index";
+import BreadCrumb from "../../common/breadCrumb/Index";
 
 export default function Index() {
     return (
         <div className="contactWrapper1">
-            <p className="snackBar">
-                <Link to='/'>home</Link> &gt; 
-                <span>contact</span>
-            </p>
+            <BreadCrumb links={["home", "contact"]} />
             <div className="contactMain1">
                 <h1>connect with us</h1>
                 <p>we&apos;re here to answer your questions and guide your real estate journey.</p>
             </div>
-            <div className="overlay"/>
+            <Overlay />
         </div>
     )
 }

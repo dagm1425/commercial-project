@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
 import "./styles.scss";
+import BreadCrumb from "../../common/breadCrumb/Index";
+import Overlay from "../../common/overlay/Index";
 
 export default function Index({ project }) {
     const projectName = project.id.split("-")[0];
@@ -8,11 +9,7 @@ export default function Index({ project }) {
     return (
         <div className="projectWrapper">
             <div style={{ backgroundImage: `url("/images/projects/${projectName}/living-room.png")` }} className="projectHero">
-                <p className="snackBar">
-                    <Link to='/'>home</Link> &gt; 
-                    <Link to={'/projects'}>projects</Link> &gt;
-                    <span>{project.title}</span>
-                </p>
+                <BreadCrumb links={["home", "projects", project.title]} />
                 <div className="projectMain">
                     <h1>{project.title}</h1>
                     <p>{project.desc}</p>
@@ -36,6 +33,7 @@ export default function Index({ project }) {
                     </div>
                 </div>
             </div>
+            <Overlay />
         </div>
     )
 }

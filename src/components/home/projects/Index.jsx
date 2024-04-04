@@ -3,8 +3,8 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
 import { BsArrowRightShort } from "react-icons/bs";
-import { LuDot } from "react-icons/lu";
 import { useGSAP } from "@gsap/react";
+import MainBtn from "../../common/mainBtn/Index.jsx";
 
 export default function Index() {
     const projects = [
@@ -81,11 +81,7 @@ export default function Index() {
                 <p>featured projects</p>
                 <h1>properties on the rise</h1>
                 <p>explore a selection of our properties in greater depth</p>
-                <Link to="/projects">
-                    <BsArrowRightShort />
-                    <span>view all projects</span>
-                    <LuDot />
-                </Link>
+                <MainBtn link="/projects">view all projects</MainBtn>
             </div>
             <div className="projectsContent">
                 {projects.map((project, i) => {

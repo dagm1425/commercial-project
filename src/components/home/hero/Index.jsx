@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import gsap from "gsap"
 import "./styles.scss"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import MainBtn from "../../common/mainBtn/Index.jsx";
 
 export default function Index() {
     useEffect(() => {
@@ -32,8 +33,9 @@ export default function Index() {
         <div className="hero">
             <div className="heroText">
                 <h1>Built with quality, delivered<br/> on time</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet est modi voluptas tenetur ullam impedit.<br/> Accusamus facilis natus voluptates eligendi placeat.</p>
-                            </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet est modi voluptas tenetur ullam impedit. Accusamus facilis natus voluptates eligendi placeat.</p>
+                <MainBtn link="/about">learn more</MainBtn>
+            </div>
             <HeroVid /> 
         </div>
     )

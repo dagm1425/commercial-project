@@ -1,0 +1,19 @@
+.breadCrumb {
+    margin-bottom: 1rem;
+
+    a, span {
+        font-size: 12px;
+        color: #fff;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: .125rem;
+    }
+
+    a:nth-child(1) {
+        margin-right: .375rem;
+    }
+
+    a:nth-child(2), span {
+        margin-left: .375rem;
+    }
+}

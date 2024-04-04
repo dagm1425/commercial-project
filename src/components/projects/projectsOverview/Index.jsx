@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import "./styles.scss";
+import ImageTextList from "../../common/ImageTextList/Index";
 
 export default function Index() {
     const projects = [
@@ -29,33 +28,7 @@ export default function Index() {
         },
     ];
 
-    const isZeroEven = (n) => {
-        return (n % 2 === 0) || n === 0;
-    }
-
     return (
-        <div className="projectsWrapper">
-            {projects.map((project, i) => {
-                const projectName = project.id.split("-")[0];
-
-                return (
-                    <div key={i} className="project">
-                        {!isZeroEven(i) && <div className="projectImgWrapper">
-                        <img src={`/images/projects/${projectName}/${projectName}.png`} alt={project.title} />
-                    </div>}
-                        <div className="projectMain">
-                            <p>{project.label}</p>
-                            <h2>{project.title}</h2>
-                            <p>{project.desc}</p>
-                            <Link to={`/projects/${project.id}`}>Learn more</Link>
-                        </div>
-                        {isZeroEven(i) && <div className="projectImgWrapper">
-                            <img src={`/images/projects/${projectName}/${projectName}.png`} alt={project.title} />
-                        </div>}
-                    </div>
-
-                )
-            })}
-        </div>
+        <ImageTextList listItems={projects}/>
     )
 }

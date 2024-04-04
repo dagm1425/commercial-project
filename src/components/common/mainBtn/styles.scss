@@ -1,0 +1,73 @@
+a {
+    position: relative;
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    text-transform: capitalize;
+    text-decoration: none;
+    padding: .875rem 1.375rem .875rem 2.5rem;
+    margin-top: 1.5rem;
+    color: #000;
+    // background-color: #681919;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border: none;
+    outline: none;
+    border-radius: .25rem;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 300ms ease-out;
+
+    span {
+        // font-size: 1rem;
+        position: relative;
+        font-weight: 600;
+        text-transform: uppercase;
+        z-index: 1;
+    }
+
+    & svg:first-child {
+        content: "";
+        position: absolute;
+        left: .5rem;
+        font-size: 2.25rem;
+        transition: scale 300ms ease-out;
+    }
+
+    & svg:last-child {
+        font-size: 1.825rem;   
+        opacity: 0;
+        position: absolute;
+    }
+
+    &:hover {
+        color: #000;
+        background-color: #fff;
+        padding: .875rem 2.75rem .875rem 1.275rem;
+    }
+
+    &:hover span {
+        color: #fff;
+    }
+
+    &:hover svg:first-child {
+        color: #681919;
+        scale: 45;
+    }
+
+    &:hover svg:last-child {
+        color: #fff;
+        animation: slideInRight 200ms ease-in-out;     
+        animation-fill-mode: forwards;  
+    }
+
+    @keyframes slideInRight {
+        from { 
+            opacity: 0;
+            right: 1.5rem;
+         } 
+        to { 
+            opacity: 1;
+            right: .625rem;
+         } 
+    }
+}

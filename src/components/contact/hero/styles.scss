@@ -32,35 +32,4 @@
             text-transform: capitalize;
         }
     }
-
-
-    .snackBar {
-        margin-bottom: 2rem;
-
-        a, span {
-            font-size: 12px;
-            color: #fff;
-            text-transform: uppercase;
-            text-decoration: none;
-            letter-spacing: .125rem;
-        }
-
-        a:nth-child(1) {
-            margin-right: .375rem;
-        }
-
-        span {
-            margin-left: .375rem;
-        }
-    }
-
-    .overlay {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 100%;
-        width: 50%;
-        background: rgb(2,0,36);
-        background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 20%, rgba(155,124,98,.0) 100%);
-    }
 }

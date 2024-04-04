@@ -1,17 +1,19 @@
-.projectsWrapper {
-    div:nth-child(1) {
-        margin-bottom: 4rem;
-    }
+.listWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    background-color: #f3eee7;
+    padding: 5rem 0;
 }
 
-.project {
+.listItem {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 4rem;
 }
 
-.projectMain {
+.listItemMain {
     width: 40%;
     padding: 2rem;
 
@@ -33,18 +35,27 @@
         margin-bottom: 1rem;
     }
 
-    a {
-        color: inherit
-    }
 }
 
-.projectImgWrapper {
+.listItemImg {
+    position: relative;
     width: 40%;
-    height: 50vh;
+    max-height: 50vh;
+    overflow: hidden;
+    border-radius: .5rem;
 
     & img {
        width: 100%; 
        height: 100%;
        object-fit: contain; 
+    }
+
+    .listItemOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #f3eee7;
     }
 }
