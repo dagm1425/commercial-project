@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import "./styles.scss";
-import { CgArrowLongLeft } from "react-icons/cg";
-import { CgArrowLongRight } from "react-icons/cg";
+import { MdArrowForwardIos } from "react-icons/md";
+import { MdArrowBackIos } from "react-icons/md";
 
 export default function Index({ projectImg }) {
     const [imgIndex, setImgIndex] = useState(0);
@@ -32,10 +32,10 @@ export default function Index({ projectImg }) {
                 <h2>{`0${imgIndex + 1} / 0${projectImg.length}`}</h2>
                 <div className="buttonsWrapper">
                     <button disabled={imgIndex === 0} onClick={prevImg}>
-                        <CgArrowLongLeft />
+                        <MdArrowBackIos />
                     </button>
                     <button disabled={imgIndex === projectImg.length - 1} onClick={nextImg}>
-                        <CgArrowLongRight />
+                        <MdArrowForwardIos />
                     </button>
                 </div>
             </div>
