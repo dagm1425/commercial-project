@@ -8,9 +8,9 @@ export default function Index({ amenities }) {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.fromTo(".amenity", {
+        gsap.fromTo(".amenity2", {
             opacity: 0,
-            x: "10vw",
+            x: "5vw",
         }, {
             opacity: 1,
             x: 0,
