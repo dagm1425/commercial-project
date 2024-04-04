@@ -1,10 +1,10 @@
 import "./styles.scss";
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { BsArrowRightShort } from "react-icons/bs";
 import { LuDot } from "react-icons/lu";
+import { useGSAP } from "@gsap/react";
 
 export default function Index() {
     const projects = [
@@ -25,8 +25,7 @@ export default function Index() {
         }
     ];
 
-
-    useEffect(() => {
+    useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
 
         gsap.fromTo(".projectLink", {
@@ -42,7 +41,7 @@ export default function Index() {
                 trigger: ".projectsContent",
                 start: "top 63%",
                 end: "+=250",
-                markers: true
+                // markers: true
             },
         })
         
