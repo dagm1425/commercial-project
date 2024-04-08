@@ -1,31 +1,31 @@
 /* eslint-disable react/prop-types */
+import { useGSAP } from "@gsap/react";
 import styles from "./style.module.scss";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 export default function Index({ amenities }) {
     const amenitiesWrapper = useRef(null);
 
-    useEffect(() => {
+    useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.fromTo(amenitiesWrapper.current.children, {
+        gsap.fromTo(amenitiesWrapper.current, {
             opacity: 0,
-            x: "5vw",
+            y: "7vh",
         }, {
             opacity: 1,
-            x: 0,
+            y: 0,
             duration: .7,
             ease: "power1.out",
-            stagger: 0.25,
             scrollTrigger: {
                 trigger: amenitiesWrapper.current,
-                start: "top 70%",
-                end: "+=100",
+                start: "top 85%",
+                end: "+=200",
             },
         })
-    }, [])
+    }, []);
 
     return (
         <div ref={amenitiesWrapper} className={styles["amenities-wrapper"]}>
