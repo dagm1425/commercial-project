@@ -20,7 +20,7 @@ export default function Index({ projectImg }) {
             <div className={styles["img-slidder"]}>
                 {projectImg.map((img, i) => {
                     return (
-                        <div key={i}  style={{ translate: `${-100 * imgIndex}%` }} className={styles["img-content"]}>
+                        <div key={i} style={{ translate: `${-100 * imgIndex}%` }} className={styles["img-content"]}>
                             <div className={styles["img-wrapper"]}>
                                 <img src={img.src} alt={img.alt} />
                             </div>
