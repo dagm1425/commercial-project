@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import "./styles.scss";
+import styles from "./style.module.scss";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import emailjs from "@emailjs/browser";
@@ -11,6 +11,7 @@ import { BsArrowRightShort } from "react-icons/bs";
 
 export default function Index() {
     const form = useRef(null);
+    const contactWrapper = useRef(null);
     const [isSendingMsg, setIsSendingMsg] = useState(false);
     const [isMsgSent, setIsMsgSent] = useState(false);
     const [isMsgNotSent, setIsMsgNotSent] = useState(false);
@@ -18,7 +19,7 @@ export default function Index() {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.fromTo(".contactWrapper2", {
+        gsap.fromTo(contactWrapper.current, {
             opacity: 0,
             y: "5vh",
         }, {
@@ -27,7 +28,7 @@ export default function Index() {
             duration: .7,
             ease: "power1.out",
             scrollTrigger: {
-                trigger: ".contactWrapper2",
+                trigger: contactWrapper.current,
                 start: "top 80%",
                 end: "+=100",
             },
@@ -57,46 +58,47 @@ export default function Index() {
         
           setIsMsgSent(false);
     };
+
     return (
-        <div className="contactWrapper2">
-            <div className="contactInfo1">
-                <div className="contactItem">
+        <div ref={contactWrapper} className={styles["contact-wrapper"]}>
+            <div className={styles["contact-info"]}>
+                <div className={styles["contact-item"]}>
                     <p>visit us</p>
                     <p>haya hulet, woreda 08, alemnesh plaza<br/> addis abeba, ethiopia</p>
                 </div>
-                <div className="contactItem">
+                <div className={styles["contact-item"]}>
                     <p>call us</p>
                     <p>Mon-Fri from 10am to 6pm <br/>+251 118 71 26 63/64/65</p>
                 </div>
-                <div className="contactItem">
+                <div className={styles["contact-item"]}>
                     <p>chat to us</p>
                     <p>info@asaitaproperties.com</p>
                 </div>
-                <div className="contactItem">
+                <div className={styles["contact-item"]}>
                     <p>social media</p>
-                    <div className="socialsWrapper1">
+                    <div className={styles["socials-wrapper"]}>
                         <a href="#"><FaFacebookF /></a>
                         <a href="#"><FaInstagram /></a>
                         <a href="#"><FaXTwitter /></a>
                     </div>
                 </div>
             </div>
-            <form ref={form} className="contactForm1" onSubmit={sendEmail}>
-                <div className="userInfo1">
-                    <div className="formGroup">
+            <form ref={form} className={styles["contact-form"]} onSubmit={sendEmail}>
+                <div className={styles["user-info"]}>
+                    <div className={styles["form-group"]}>
                         <label htmlFor="user_name">name</label>
                         <input id="user_name" type="text" name="user_name" required />
                     </div>
-                    <div className="formGroup">
+                    <div className={styles["form-group"]}>
                         <label htmlFor="user_email">email</label>
                         <input id="user_email" type="text" name="user_email" required />
                     </div>
                 </div>
-                <div className="formGroup">
+                <div className={styles["form-group"]}>
                         <label htmlFor="subject">subject</label>
                         <input id="subject" type="text" name="subject" required />
                 </div>
-                <div className="formGroup">
+                <div className={styles["form-group"]}>
                         <label htmlFor="user_message">message</label>
                         <textarea id="user_message" name="user_message" rows={1} cols={45} required ></textarea>
                 </div>
@@ -107,7 +109,7 @@ export default function Index() {
                 </button>
             </form>
             {(isSendingMsg || isMsgSent || isMsgNotSent) && 
-            <div className="snackbar">
+            <div className={styles.snackbar}>
                 <div>
                     {isSendingMsg && "Sending message..."}
                     {isMsgSent && "Message sent!"}

@@ -1,22 +1,22 @@
 /* eslint-disable react/prop-types */
-import { useEffect } from "react";
-import "./styles.scss";
+import { useEffect, useRef } from "react";
+import styles from "./style.module.scss";
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import MainBtn from "../mainBtn/Index";
+import MainBtn from "../main-btn/Index";
 
 export default function Index({ listItems }) {
+    const divRefs = useRef([]);
+    // useGsap()
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.utils.toArray(".listItem").forEach((listItem, index) => {
-            const listItemImgWrapper = listItem.querySelector(".listItemImg");
-            const listItemMain = listItem.querySelector(".listItemMain");
-            const listItemImg = listItemImgWrapper.querySelector("img");
-            const listItemOverlay = listItemImgWrapper.querySelector(".listItemOverlay");
-            const x = (index % 2 === 0) ?  "-15%" : "15%"; 
+        divRefs.current.forEach(({ imgDiv, textDiv }, i) => {
+            const listItemImg = imgDiv.querySelector("img");
+            const listItemOverlay = imgDiv.querySelector("div");
+            const x = (i % 2 === 0) ?  "-15%" : "15%"; 
             const scrollTriggerConfig = {
-                trigger: listItem,
+                trigger: imgDiv,
                 start: "top 80%",
                 end: "+=200",
             };
@@ -28,7 +28,7 @@ export default function Index({ listItems }) {
               scrollTrigger: scrollTriggerConfig,
             });
 
-            gsap.fromTo(listItemMain, {
+            gsap.fromTo(textDiv, {
               x: x,
               opacity: 0
             }, {
@@ -50,19 +50,20 @@ export default function Index({ listItems }) {
           });
     }, []);
 
-    const renderImage = (src, title) => {
+    const renderImage = (src, title, obj) => {
         return (
-            <div className="listItemImg">
+            <div ref={(el) => (obj.imgDiv = el)} className={styles['list-item-img']}>
                 <img src={src} alt={title} />
-                <div className="listItemOverlay"/>
+                <div className={styles['list-item-overlay']}/>
             </div>
         )
     }
 
     return (
-        <div className="listWrapper">
+        <div className={styles['list-wrapper']}>
             {listItems.map((listItem, i) => {
                 const isProject = listItems.length === 4;
+                const obj = { imgDiv: null, textDiv: null };
                 let src;
 
                 if (isProject) {
@@ -71,17 +72,16 @@ export default function Index({ listItems }) {
                 } else {
                     src = `/images/other/${listItem.src}`
                 }
-
                 return (
-                    <div className="listItem" key={i}>
-                        {i % 2 === 0 && renderImage(src, listItem.title)}
-                        <div className="listItemMain">
+                    <div key={i} ref={() => (divRefs.current[i] = obj)} className={styles['list-item']}>
+                        {i % 2 === 0 && renderImage(src, listItem.title, obj)}
+                        <div ref={(el) => (obj.textDiv = el)} className={styles['list-item-main']}>
                             <p>{listItem.label}</p>
                             <h2>{listItem.title}</h2>
                             <p>{listItem.desc}</p>
                             {isProject && <MainBtn link={`/projects/${listItem.id}`}>Learn more</MainBtn>}
                         </div>
-                        {i % 2 !== 0 && renderImage(src, listItem.title)}
+                        {i % 2 !== 0 && renderImage(src, listItem.title, obj)}
                     </div>
                 ) 
             })}

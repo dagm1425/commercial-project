@@ -1,11 +1,11 @@
-.projectFeaturesWrapper2 {
+.project-features-wrapper {
     height: 230vh;
     display: flex;
     padding: 5rem 10rem 0rem;
     background-color: #fff7ed;
 }
 
-.projectFeaturesHeader1 {
+.project-features-header {
     h2 {
         font-size: 3rem;
         font-weight: 600;
@@ -29,12 +29,12 @@
     }
 }
 
-.projectFeatures1 {
+.project-features {
     position: relative;
     width: 45%;
     margin-left: auto;
     
-    .projectFeature1 {
+    .project-feature {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -42,9 +42,10 @@
         padding: 2rem 2.5rem;
         background-color: white;
         border-radius: .5rem;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        
-        .featureHeader {
+        // box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+
+        .feature-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -81,19 +82,19 @@
         }
     }
 
-    .projectFeature1:nth-child(1) {
+    .project-feature:nth-child(1) {
         top: 0;
     }
 
-    .projectFeature1:nth-child(2) {
+    .project-feature:nth-child(2) {
         top: 24%;
     }
 
-    .projectFeature1:nth-child(3) {
+    .project-feature:nth-child(3) {
         top: 55%;
     }
 
-    .projectFeature1:nth-child(4) {
-        top: 75%;
+    .project-feature:nth-child(4) {
+        top: 70%;
     }
 }

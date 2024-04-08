@@ -1,4 +1,4 @@
-.projectWrapper {
+.project-wrapper {
     position: relative;
 
     p, h1, h3, a {
@@ -7,7 +7,7 @@
     }
 }
 
-.projectHero {
+.project-hero {
     height: 450px; 
     background-position: center; 
     background-repeat: no-repeat; 
@@ -15,7 +15,7 @@
     color: #fff;
     padding: 3rem 5rem;
 
-    .projectMain {
+    .project-main {
         width: 50%;
         padding-left: 3rem;
     }
@@ -29,7 +29,7 @@
     }
 }
 
-.specsWrapper {
+.specs-wrapper {
     display: flex;
     justify-content: center;
     gap: 2rem;

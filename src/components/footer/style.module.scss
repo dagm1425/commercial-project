@@ -1,16 +1,16 @@
-.footerWrapper {
+.footer-wrapper {
     padding: 4.5rem 5rem 2.5rem;
     background-color: beige;
 }
 
-.footerContent {
+.footer-content {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
     padding-bottom: 3rem;
 }
 
-.leftDiv {
+.left-div {
     h2 {
         text-transform: capitalize;
         line-height: normal;
@@ -22,7 +22,7 @@
     }
 }
 
-.centerDiv {
+.center-div {
     display: flex;
     flex-direction: column;
     gap: .75rem;
@@ -39,20 +39,20 @@
     }
 }
 
-.rightDiv {
+.right-div {
     h3 {
         text-transform: uppercase;
         margin-bottom: .75rem;
     }
 
-    .socialsWrapper a {
+    .socials-wrapper a {
         font-size: 1.25rem;
         color: inherit;
         margin-right: .75rem;
     }
 }
 
-.footerNote {
+.footer-note {
     padding-top: .75rem;
     text-align: center;
 }

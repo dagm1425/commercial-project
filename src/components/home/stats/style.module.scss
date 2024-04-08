@@ -1,4 +1,4 @@
-.statsWrapper {
+.stats-wrapper {
     display: flex;
     justify-content: center;
     gap: 4rem;
@@ -6,7 +6,7 @@
     border-top: 1px solid #e7d9c3;
     border-bottom: 1px solid #e7d9c3;
 
-    .statWrapper {
+    .stat-wrapper {
         position: relative;
         text-align: center;
 
@@ -20,7 +20,7 @@
             letter-spacing: .125rem;
         }
 
-        .statIconWrapper {
+        .stat-icon-wrapper {
             display: grid;
             place-items: center;
             height: 64px;

@@ -1,4 +1,4 @@
-.amenitiesWrapper {
+.amenities-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     justify-items: center;
@@ -15,7 +15,7 @@
         margin-bottom: .5rem;
     }
 
-    .iconWrapper {
+    .icon-wrapper {
         width: 72px;
         height: 72px;
         margin: 0 auto 1rem;

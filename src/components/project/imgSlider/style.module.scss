@@ -1,15 +1,15 @@
-.sliderWrapper {
+.slider-wrapper {
     padding: 4rem 10rem;
 }
 
-.imgSlidder {
+.img-slidder {
     display: flex;
     margin: 0 auto;
     overflow: hidden;
     padding-left: 22%;
     gap: 1.5rem;
 
-    .imgContent {
+    .img-content {
         transition: translate 300ms ease-in-out;
 
         p {
@@ -18,7 +18,7 @@
         }
     }
 
-    .imgWrapper {
+    .img-wrapper {
         width: 40vw;
         height: auto;
         background-color: aliceblue;
@@ -38,25 +38,49 @@
     }
 }
 
-.sliderController {
+.slider-controller {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding-right: 1rem;
     gap: 1.75rem;
 
-    .buttonsWrapper {
+    .buttons-wrapper {
+        display: flex;
+        align-items: center;
+
         button:first-child {
             margin-right: 1.5rem;
+
+            svg {
+                margin-right: -6px;
+            }
         }
     
         button {
-            font-size: 2.5rem;
-            margin-top: .75rem;
-            border: none;
+            display: grid;
+            place-items: center;
+            width: 34px;
+            height: 34px;
+            font-size: 1rem;
+            border: 1.5px solid #000;
+            border-radius: 50%;
             outline: none;
-            background-color: transparent;
+            background-color: #fff;
             cursor: pointer;
+            transition: filter 100ms ease-in;
+
+            &:disabled { 
+                cursor: default;
+            }
+
+            &:hover {
+                filter: brightness(.95);
+            }
+
+            &:hover:disabled {
+                filter: none; 
+            }
         }
     }
 }

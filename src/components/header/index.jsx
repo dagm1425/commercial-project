@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import "./styles.scss"
+import styles from "./style.module.scss";
 // import { MdKeyboardArrowRight } from "react-icons/md";
 // import gsap from 'gsap';
 import { Link } from "react-router-dom";
@@ -43,14 +43,14 @@ export default function Index() {
     // }, [dropdownProject])
 
     return (
-        <header className="header">
-            <div className="logo">
+        <header className={styles.header}>
+            <div className={styles.logo}>
                 <img src="/images/other/logo.png" alt="logo" />
             </div>
-            <nav className="nav">
+            <nav className={styles.nav}>
                 {links.map((link, i) => {
                     return (
-                        <div key={i} className={`navLink ${link === activeLink ? "active" : ""}`}>
+                        <div key={i} className={`${styles["nav-link"]} ${link === activeLink ? styles.active : ""}`}>
                             <Link to={`/${i === 0 ? "" : link}`} onClick={() => setActiveLink(link)}>{link}</Link>
                             <LuDot />
                         </div>

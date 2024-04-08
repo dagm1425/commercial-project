@@ -1,4 +1,4 @@
-import ImageTextList from "../../common/ImageTextList/Index";
+import ImageTextList from "../../common/image-text-list/Index";
 
 export default function Index() {
     const projects = [

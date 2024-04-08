@@ -1,13 +1,15 @@
-import { useEffect } from "react";
-import "./styles.scss";
+import { useEffect, useRef } from "react";
+import styles from "./style.module.scss";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
 export default function Index() {
+    const grid = useRef(null);
+
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.fromTo(".projectFeaturesGrid", {
+        gsap.fromTo(grid.current, {
             opacity: 0,
             y: "5vh",
         }, {
@@ -16,7 +18,7 @@ export default function Index() {
             duration: .7,
             ease: "power1.out",
             scrollTrigger: {
-                trigger: ".projectFeaturesGrid",
+                trigger: grid.current,
                 start: "top 80%",
                 end: "+=100",
             },
@@ -43,14 +45,14 @@ export default function Index() {
     ];
     
     return (
-        <div className="projectFeaturesWrapper">
-            <div className="projectFeaturesHeader">
+        <div className={styles['project-features-wrapper']}>
+            <div className={styles['project-features-header']}>
                 <h2>our guiding principles</h2>
                 <hr/>
             </div>
-            <div className="projectFeaturesGrid">
+            <div ref={grid} className={styles['project-features-grid']}>
                 {principles.map((principle, i) => (
-                    <div key={i} className="projectFeature">
+                    <div key={i} className={styles['project-feature']}>
                         <h3>{principle.title}</h3>
                         <p>{principle.desc}</p>
                     </div>

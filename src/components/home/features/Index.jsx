@@ -1,7 +1,7 @@
 // import { useEffect } from "react";
 // import gsap from "gsap"
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ImageTextList from "../../common/ImageTextList/Index";
+import ImageTextList from "../../common/image-text-list/Index";
 
 export default function Index() {
     const features = [

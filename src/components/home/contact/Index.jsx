@@ -1,14 +1,17 @@
-import "./styles.scss";
+import styles from "./style.module.scss";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
-import MainBtn from "../../common/mainBtn/Index";
+import MainBtn from "../../common/main-btn/Index";
+import { useRef } from "react";
 
 export default function Index() {
+    const contactWrapper = useRef(null);
+    
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.fromTo(".contactWrapper > div", {
+        gsap.fromTo(contactWrapper.current.children[0], {
             opacity: 0,
             y: "7vh",
         }, {
@@ -17,7 +20,7 @@ export default function Index() {
             duration: .7,
             ease: "power1.out",
             scrollTrigger: {
-                trigger: ".contactWrapper> div",
+                trigger: contactWrapper.current,
                 start: "top 85%",
                 end: "+=200",
             },
@@ -25,9 +28,11 @@ export default function Index() {
     }, []);
 
     return (
-        <div className="contactWrapper">
-            <h1>Unlock the door<br /> to homeownership</h1>
-            <MainBtn link="/contact">contact us</MainBtn>
+        <div ref={contactWrapper} className={styles["contact-wrapper"]}>
+            <div>
+                <h1>Unlock the door<br />to homeownership</h1>
+                <MainBtn link="/contact">contact us</MainBtn>
+            </div>
         </div>
     )
 }

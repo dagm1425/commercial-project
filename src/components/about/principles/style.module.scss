@@ -1,7 +1,7 @@
-.projectFeaturesWrapper {
+.project-features-wrapper {
     padding: 4rem 10rem;
 
-    .projectFeaturesHeader {
+    .project-features-header {
         margin-bottom: 4rem;
 
         h2 {
@@ -20,13 +20,13 @@
 }
 
 
-.projectFeaturesGrid {
+.project-features-grid {
     display: grid;
     gap: 2.75rem 6rem;
     grid-template-columns: repeat(2, 1fr);
 }
 
-.projectFeature {
+.project-feature {
     h3 {
         font-size: 1.325rem;
         font-weight: 400;

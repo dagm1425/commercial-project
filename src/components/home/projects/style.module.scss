@@ -2,7 +2,7 @@
     padding: 5rem;
 }
 
-.projectsHeader {
+.projects-header {
     padding-left: 3rem;
     margin-bottom: 4rem;
 
@@ -26,34 +26,34 @@
     }
 }
 
-.projectsContent {
+.projects-content {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
 }
 
-.projectLink {
+.project-link {
     display: inline-block;
     max-width: 30%;
     text-decoration: none;
     color: #000;
     cursor: pointer;
 
-    &:hover .linkImgWrapper > img {
+    &:hover .link-img-wrapper > img {
         transform: scale(1.125);
     }
 
-    &:hover .projectDesc p:nth-child(2) {
+    &:hover .project-desc p:nth-child(2) {
         padding-left: 2.25rem;
     }
 
-    &:hover .projectDesc p:nth-child(2) > svg {
+    &:hover .project-desc p:nth-child(2) > svg {
         left: -.5rem;
         opacity: 1;
     }
 }
 
-.linkImgWrapper {
+.link-img-wrapper {
     height: 90%;
     margin: 0 auto;
     overflow: hidden;
@@ -67,7 +67,7 @@
     }
 }
 
-.projectDesc {
+.project-desc {
     padding: 1rem 0;
 
     p:nth-child(2) {

@@ -1,10 +1,11 @@
-import "./styles.scss";
+import styles from "./style.module.scss";
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
 import { BsArrowRightShort } from "react-icons/bs";
 import { useGSAP } from "@gsap/react";
-import MainBtn from "../../common/mainBtn/Index.jsx";
+import MainBtn from "../../common/main-btn/Index.jsx";
+import { useRef } from "react";
 
 export default function Index() {
     const projects = [
@@ -24,77 +25,48 @@ export default function Index() {
             title: "Bole Skyline",
         }
     ];
+    const linksRefs = useRef([]);
+    const linksWrapper = useRef(null);
 
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.fromTo(".projectLink", {
+        gsap.fromTo(linksRefs.current, {
             opacity: 0,
-            y: "15vh",
-        }, {
+            y: "4vh",
+          }, {
             opacity: 1,
             y: 0,
-            duration: .4,
+            duration: .3,
             ease: "power1.out",
-            stagger: .15,
+            stagger: .2,
             scrollTrigger: {
-                trigger: ".projectsContent",
-                start: "top 63%",
-                end: "+=250",
-                // markers: true
+              trigger: linksWrapper.current,
+              start: "top 70%",
+              end: "+=250",
             },
-        })
-        
-        // gsap.registerPlugin(ScrollTrigger);
-
-        // const lenis = new Lenis({
-        //     duration: 1.2,
-        //     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
-        // })
-
-        // function raf(time) {
-        //     lenis.raf(time)
-        //     requestAnimationFrame(raf)
-        // }
-
-        // requestAnimationFrame(raf)
-
-        // // eslint-disable-next-line no-unused-vars
-        // const tl = gsap.timeline({
-        //     scrollTrigger: {
-        //     trigger: '.projectsContent',
-        //     start: "top 70%",
-        //     end: "+=450",
-        //     scrub: true
-        //     }
-        // })
-        // .to('.projectLink', {
-        //     stagger: .2,
-        //     y: 0,
-        //     scrub: true
-        // })
+          })
     }, [])
 
     return (
-        <section className="projects">
-            <div className="projectsHeader">
+        <section className={styles.projects}>
+            <div className={styles["projects-header"]}>
                 <p>featured projects</p>
                 <h1>properties on the rise</h1>
                 <p>explore a selection of our properties in greater depth</p>
                 <MainBtn link="/projects">view all projects</MainBtn>
             </div>
-            <div className="projectsContent">
+            <div ref={linksWrapper} className={styles["projects-content"]}>
                 {projects.map((project, i) => {
                     const projectName = project.id.split("-")[0];
-
                     return (
-                        <Link key={i} to={`/projects/${project.id}`} className="projectLink">
-                            <div className="linkImgWrapper">
+                        <Link key={i} to={`/projects/${project.id}`} ref={(e) => (linksRefs.current[i] = e)} className={styles["project-link"]}>
+                            <div className={styles["link-img-wrapper"]}>
                                 <img src={`/images/projects/${projectName}/${projectName}-ext.png`} 
                                     alt={project.title}
                                 />
                             </div>
-                            <div className="projectDesc">
+                            <div className={styles["project-desc"]}>
                                 <p>{project.label}</p>
                                 <p><BsArrowRightShort />{project.title}</p>
                             </div>

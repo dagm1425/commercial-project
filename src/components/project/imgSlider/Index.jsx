@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import "./styles.scss";
+import styles from "./style.module.scss";
 import { MdArrowForwardIos } from "react-icons/md";
 import { MdArrowBackIos } from "react-icons/md";
 
@@ -16,21 +16,21 @@ export default function Index({ projectImg }) {
     }
 
     return (
-        <div className="sliderWrapper">
-            <div className="imgSlidder">
+        <div className={styles["slider-wrapper"]}>
+            <div className={styles["img-slidder"]}>
                 {projectImg.map((img, i) => {
                     return (
-                        <div key={i}  style={{ translate: `${-100 * imgIndex}%` }} className="imgContent">
-                            <div className="imgWrapper">
+                        <div key={i}  style={{ translate: `${-100 * imgIndex}%` }} className={styles["img-content"]}>
+                            <div className={styles["img-wrapper"]}>
                                 <img src={img.src} alt={img.alt} />
                             </div>
                         </div>
                     )
                 })}
             </div>
-            <div className="sliderController">
+            <div className={styles["slider-controller"]}>
                 <h2>{`0${imgIndex + 1} / 0${projectImg.length}`}</h2>
-                <div className="buttonsWrapper">
+                <div className={styles["buttons-wrapper"]}>
                     <button disabled={imgIndex === 0} onClick={prevImg}>
                         <MdArrowBackIos />
                     </button>

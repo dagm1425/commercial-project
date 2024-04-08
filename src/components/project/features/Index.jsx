@@ -1,16 +1,21 @@
 /* eslint-disable react/prop-types */
-import "./styles.scss";
+import styles from "./style.module.scss";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
 export default function Index({ features }) {
+    const projectFeaturesHeader = useRef(null);
+    const projectFeatures = useRef(null);
+    const projectFeaturesWrapper = useRef(null);
+
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.to(".projectFeaturesHeader1", {
+        gsap.to(projectFeaturesHeader.current, {
             scrollTrigger: {
-                trigger: ".projectFeaturesHeader1",
+                trigger: projectFeaturesHeader.current,
                 start: "top 10%",
                 end: "+=1050px",
                 scrub: 2,
@@ -22,7 +27,7 @@ export default function Index({ features }) {
 
         const tl = gsap.timeline({
             scrollTrigger: {
-              trigger: ".projectFeatures1",
+              trigger: projectFeatures.current,
               // markers: true, 
               start: "top 10%",
               end: "+=1050px",
@@ -42,32 +47,32 @@ export default function Index({ features }) {
 
           tl.addLabel("a"); 
           
-          tl.to(".projectFeatures1 .projectFeature1:nth-child(2)", {
+          tl.to(projectFeatures.current.children[1], {
             // top: "-0.725rem",
             top: "-0.125rem",
             // ease: "power1.out" 
             // duration: 5
           }, "a")
-            .to(".projectFeatures1 .projectFeature1:nth-child(1)", {
+            .to(projectFeatures.current.children[0], {
               scale: ".65",
               marginTop: "-3.1rem",
               // ease: "power1.out" 
               // duration: 5
             }, "a")
-            .to(".projectFeatures1 .projectFeature1:nth-child(3)", {
+            .to(projectFeatures.current.children[2], {
               top: "24%",
               // ease: "power1.out" 
               // duration: 5
             }, "a")
             .addLabel("b"); 
           
-          tl.to(".projectFeatures1 .projectFeature1:nth-child(3)", {
+          tl.to(projectFeatures.current.children[2], {
             // top: "0.725rem",
             top: "0.625rem",
             // ease: "power1.out" 
             // duration: 5
           }, "b")
-            .to(".projectFeatures1 .projectFeature1:nth-child(2)", {
+            .to(projectFeatures.current.children[1], {
               scale: "0.75",
               transformOrigin: "top",
               // ease: "power1.out" 
@@ -76,14 +81,14 @@ export default function Index({ features }) {
               // marginTop: "-1.125rem",
               // duration: 5
             }, "b")
-            .to(".projectFeatures1 .projectFeature1:nth-child(4)", {
+            .to(projectFeatures.current.children[3], {
               top: "24%",
               // ease: "power1.out" 
               // duration: 5
             }, "b")
             .addLabel("c"); 
 
-            tl.to(".projectFeatures1 .projectFeature1:nth-child(3)", {
+            tl.to(projectFeatures.current.children[2], {
               scale: ".85",
               transformOrigin: "top",
               // ease: "power1.out" 
@@ -93,7 +98,7 @@ export default function Index({ features }) {
             // .to(".projectFeaturesWrapper2", {
             //   height: "230vh"
             // }, "d")
-            .to(".projectFeatures1 .projectFeature1:nth-child(4)", {
+            .to(projectFeatures.current.children[3], {
               // top: "1.825rem",
               top: "-0.975rem",
               paddingTop: "3rem",
@@ -101,24 +106,24 @@ export default function Index({ features }) {
               // marginTop: "-0.5rem",
               // duration: 5
             }, "c")
-            .to(".projectFeatures1 .projectFeature1:nth-child(4) .featureHeader > div", {
+            .to(projectFeatures.current.children[3].children[0].children[1], {
               marginTop: "-5.25rem",
             }, "c")
-            .to(".projectFeaturesWrapper2", {
+            .to(projectFeaturesWrapper.current, {
               height: "190vh"
             }, "c")
           
     }, []);
     
     return (
-        <div className="projectFeaturesWrapper2">
-            <div className="projectFeaturesHeader1">
+        <div ref={projectFeaturesWrapper} className={styles["project-features-wrapper"]}>
+            <div ref={projectFeaturesHeader} className={styles["project-features-header"]}>
                 <h2>What sets us <span>apart</span>?</h2>
             </div>
-            <div className="projectFeatures1"> 
+            <div ref={projectFeatures} className={styles["project-features"]}> 
                 {features.map((feature, index) => (
-                    <div className="projectFeature1" key={index}>
-                        <div className="featureHeader">
+                    <div className={styles["project-feature"]} key={index}>
+                        <div className={styles["feature-header"]}>
                           <h3>{feature.title}</h3>
                           <div>
                             {feature.icon}

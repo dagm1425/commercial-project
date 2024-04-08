@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import "./styles.scss";
+import styles from "./style.module.scss";
 import Odometer from "odometer";
 import { PiBuildingsLight } from "react-icons/pi";
 import { MdConstruction } from "react-icons/md";
@@ -7,7 +7,7 @@ import { GiProfit } from "react-icons/gi";
 import { FaPeopleGroup } from "react-icons/fa6";
 
 export default function Index() {
-    const stats = useRef(null);
+    const statsWrapper = useRef(null);
     const odometerRefs = useRef([]);
     const statsData = [
         {
@@ -35,8 +35,8 @@ export default function Index() {
     useEffect(() => {
         const observer = new IntersectionObserver(handleIntersect);
 
-        if (stats.current) {
-            observer.observe(stats.current);
+        if (statsWrapper.current) {
+            observer.observe(statsWrapper.current);
         }
 
         return () => {
@@ -60,11 +60,11 @@ export default function Index() {
     }
       
     return (
-        <div ref={stats} className="statsWrapper">
+        <div ref={statsWrapper} className={styles["stats-wrapper"]}>
             {statsData.map((stat, i) => {
                 return (
-                    <div key={i} className="statWrapper">
-                        <div className="statIconWrapper">
+                    <div key={i} className={styles["stat-wrapper"]}>
+                        <div className={styles["stat-icon-wrapper"]}>
                             {stat.icon}
                         </div>
                         <h1 ref={(ref) => odometerRefs.current.push(ref)} data-value={stat.value} className="odometer">0</h1>

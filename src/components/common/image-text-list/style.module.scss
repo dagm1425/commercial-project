@@ -1,4 +1,4 @@
-.listWrapper {
+.list-wrapper {
     display: flex;
     flex-direction: column;
     gap: 6rem;
@@ -6,14 +6,14 @@
     padding: 5rem 0;
 }
 
-.listItem {
+.list-item {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 4rem;
 }
 
-.listItemMain {
+.list-item-main {
     width: 40%;
     padding: 2rem;
 
@@ -37,7 +37,7 @@
 
 }
 
-.listItemImg {
+.list-item-img {
     position: relative;
     width: 40%;
     max-height: 50vh;
@@ -50,7 +50,7 @@
        object-fit: contain; 
     }
 
-    .listItemOverlay {
+    .list-item-overlay {
         position: absolute;
         top: 0;
         left: 0;

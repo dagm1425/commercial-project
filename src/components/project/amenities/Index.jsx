@@ -1,14 +1,16 @@
 /* eslint-disable react/prop-types */
-import "./styles.scss";
+import styles from "./style.module.scss";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Index({ amenities }) {
+    const amenitiesWrapper = useRef(null);
+
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.fromTo(".amenity2", {
+        gsap.fromTo(amenitiesWrapper.current.children, {
             opacity: 0,
             x: "5vw",
         }, {
@@ -18,7 +20,7 @@ export default function Index({ amenities }) {
             ease: "power1.out",
             stagger: 0.25,
             scrollTrigger: {
-                trigger: ".amenitiesWrapper",
+                trigger: amenitiesWrapper.current,
                 start: "top 70%",
                 end: "+=100",
             },
@@ -26,10 +28,10 @@ export default function Index({ amenities }) {
     }, [])
 
     return (
-        <div className="amenitiesWrapper">
+        <div ref={amenitiesWrapper} className={styles["amenities-wrapper"]}>
             {amenities.map((amenity, index) => (
-                <div className="amenity" key={index}>
-                    <div className="iconWrapper">
+                <div className={styles.amenity} key={index}>
+                    <div className={styles["icon-wrapper"]}>
                         <img src={`/icons/${amenity.src}`} alt={amenity.title} />
                     </div>
                     <h3>{amenity.title}</h3>

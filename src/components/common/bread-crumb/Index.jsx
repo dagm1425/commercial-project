@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { Link } from "react-router-dom";
-import "./styles.scss";
+import styles from "./style.module.scss";
 
 export default function Index({ links }) {
     return (
-        <p className="breadCrumb">
+        <p className={styles['bread-crumb']}>
             {links.map((link, i) => (
                 <React.Fragment key={i}>
                     {i < links.length - 1 ? (
