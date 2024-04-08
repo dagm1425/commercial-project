@@ -68,6 +68,7 @@
             outline: none;
             background-color: #fff;
             cursor: pointer;
+            z-index: 100;
             transition: filter 100ms ease-in;
 
             &:disabled { 
