@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styles from "./style.module.scss";
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,27 +8,11 @@ import { useGSAP } from "@gsap/react";
 import MainBtn from "../../common/main-btn/Index.jsx";
 import { useEffect, useRef } from "react";
 
-export default function Index() {
-    const projects = [
-        { 
-            id: "addis-westview",
-            label: "Standard",
-            title: "Addis Westview",
-        },
-        { 
-            id: "piazza-downtown",
-            label: "Luxury",
-            title: "Piazza Downtown",
-        },
-        { 
-            id: "bole-skyline",
-            label: "Luxury",
-            title: "Bole Skyline",
-        }
-    ];
+export default function Index({ projects }) {
     const linksRefs = useRef([]);
     const linksWrapper = useRef(null);
     const projectsSection = useRef(null);
+    const projectNames = projects.map((project) => project.title.split(" ").slice(0, 2).join(' '));
     
     useEffect(() => {
         const observer = new IntersectionObserver(handleIntersect);
@@ -92,7 +77,8 @@ export default function Index() {
                 {projects.map((project, i) => {
                     const projectName = project.id.split("-")[0];
                     return (
-                        <Link key={i} to={`/projects/${project.id}`} ref={(e) => (linksRefs.current[i] = e)} className={styles["project-link"]}>
+                        i > 2 ? null
+                        : <Link key={i} to={`/projects/${project.id}`} ref={(e) => (linksRefs.current[i] = e)} className={styles["project-link"]}>
                             <div className={styles["link-img-wrapper"]}>
                                 <img src={`/images/projects/${projectName}/${projectName}-ext.png`} 
                                     alt={project.title}
@@ -101,7 +87,7 @@ export default function Index() {
                             </div>
                             <div className={styles["project-desc"]}>
                                 <p>{project.label}</p>
-                                <p><BsArrowRightShort />{project.title}</p>
+                                <p><BsArrowRightShort />{projectNames[i]}</p>
                             </div>
                         </Link>
                     )

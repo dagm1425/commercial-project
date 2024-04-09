@@ -4,11 +4,12 @@ import Features from '../components/home/features/Index.jsx';
 import Contact from '../components/home/contact/Index.jsx';
 import Stats from "../components/home/stats/Index.jsx";
 
-export default function Home() {
+// eslint-disable-next-line react/prop-types
+export default function Home({ projects }) {
   return (
     <>
       <Hero />
-      <Projects />
+      <Projects projects={projects}/>
       <Features />
       <Stats />
       <Contact />
