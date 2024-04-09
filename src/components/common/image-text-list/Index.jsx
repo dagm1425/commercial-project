@@ -7,7 +7,20 @@ import MainBtn from "../main-btn/Index";
 
 export default function Index({ listItems }) {
     const divRefs = useRef([]);
-    // useGsap()
+    const listWrapper = useRef(null);
+    
+    useEffect(() => {
+        const observer = new IntersectionObserver(handleIntersect);
+
+        if (listWrapper.current) {
+            observer.observe(listWrapper.current);
+        }
+
+        return () => {
+            observer.disconnect(); 
+        };
+    }, []);
+
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
@@ -50,6 +63,13 @@ export default function Index({ listItems }) {
           });
     }, []);
 
+    const handleIntersect = async (entries) => {
+        const entry = entries[0]; 
+        if (entry.isIntersecting) {
+            ScrollTrigger.refresh();
+        }
+    }
+
     const renderImage = (src, title, obj) => {
         return (
             <div ref={(el) => (obj.imgDiv = el)} className={styles['list-item-img']}>
@@ -60,7 +80,7 @@ export default function Index({ listItems }) {
     }
 
     return (
-        <div className={styles['list-wrapper']}>
+        <div ref={listWrapper} className={styles['list-wrapper']}>
             {listItems.map((listItem, i) => {
                 const isProject = listItems.length === 4;
                 const obj = { imgDiv: null, textDiv: null };
