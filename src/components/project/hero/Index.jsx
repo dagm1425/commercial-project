@@ -5,7 +5,25 @@ import Overlay from "../../common/overlay/Index";
 
 export default function Index({ project }) {
     const projectName = project.id.split("-")[0];
-    
+    const specs =[
+        {
+            name: "floors",
+            title: "floors",
+        },
+        {
+            name: "bedrooms",
+            title: "bedrooms",
+        },
+        {
+            name: "minMaxArea",
+            title: "Minimum & Maximum (sqm.)",
+        },
+        {
+            name: "builtUpArea",
+            title: "Built-up Area (sqm.)",
+        },
+    ];
+
     return (
         <div className={styles["project-wrapper"]}>
             <div style={{ backgroundImage: `url("/images/projects/${projectName}/living-room.png")` }} className={styles["project-hero"]}>
@@ -14,22 +32,14 @@ export default function Index({ project }) {
                     <h1>{project.title}</h1>
                     <p>{project.desc}</p>
                     <div className={styles["specs-wrapper"]}>
-                        <div className={styles.spec}>
-                            <h3>{project.specs.floors}</h3>
-                            <p>floors</p>
-                        </div>
-                        <div className={styles.spec}>
-                            <h3>{project.specs.bedrooms}</h3>
-                            <p>bedrooms</p>
-                        </div>
-                        <div className={styles.spec}>
-                            <h3>{project.specs.minMaxArea}</h3>
-                            <p>Minimum & Maximum (sqm.)</p>
-                        </div>
-                        <div className={styles.spec}>
-                            <h3>{project.specs.builtUpArea}</h3>
-                            <p>Built-up Area (sqm.)</p>
-                        </div>
+                        {specs.map((spec, i) => {
+                            return (
+                                <div key={i} className={styles.spec}>
+                                    <h3>{project.specs[spec.name]}</h3>
+                                    <p>{spec.title}</p>
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
             </div>
