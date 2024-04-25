@@ -61,14 +61,14 @@ export default function Index() {
 
     return (
         <div ref={contactWrapper} className={styles["contact-wrapper"]}>
-            <div className={styles["contact-info"]}>
+            <div>
                 <div className={styles["contact-item"]}>
                     <p>visit us</p>
-                    <p>haya hulet, woreda 08, alemnesh plaza<br/> addis abeba, ethiopia</p>
+                    <p>Haya Hulet, Woreda 08, Alemnesh plaza<br/> Addis Abeba, Ethiopia</p>
                 </div>
                 <div className={styles["contact-item"]}>
                     <p>call us</p>
-                    <p>Mon-Fri from 10am to 6pm <br/>+251 118 71 26 63/64/65</p>
+                    <p>Mon-Fri from 10AM to 6PM <br/>+251 118 71 26 63/64/65</p>
                 </div>
                 <div className={styles["contact-item"]}>
                     <p>chat to us</p>

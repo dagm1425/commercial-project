@@ -9,7 +9,10 @@ export default function Index({ links }) {
             {links.map((link, i) => (
                 <React.Fragment key={i}>
                     {i < links.length - 1 ? (
-                        <Link to={`/${link === "home" ? "" : link}`}>{link} &gt;</Link>
+                        <>
+                            <Link to={`/${link === "home" ? "" : link}`}>{link}</Link>
+                            <span>&gt;</span>
+                        </>
                     ) : (
                         <span>{link}</span>
                     )}

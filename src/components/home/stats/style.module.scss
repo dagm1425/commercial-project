@@ -3,8 +3,7 @@
     justify-content: center;
     gap: 4rem;
     padding: 6rem 0;
-    border-top: 1px solid #e7d9c3;
-    border-bottom: 1px solid #e7d9c3;
+    background-color: #f6f3ee;
 
     .stat-wrapper {
         position: relative;
@@ -13,7 +12,9 @@
         h1 {
             font-size: 2.5rem;
             margin-bottom: .375rem;
+            font-weight: 500;
         }
+
         p {
             font-size: 14px;
             text-transform: uppercase;
@@ -26,7 +27,8 @@
             height: 64px;
             width: 64px;
             margin: 0 auto 1.5rem;
-            background-color: #f3eee7;
+            background-color: white;
+            box-shadow: 0 6px 10px #0000000a,0 2px 4px #0000000a;
             border-radius: 50%;
 
             svg {

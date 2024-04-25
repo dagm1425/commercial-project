@@ -68,10 +68,9 @@ export default function Index({ projects }) {
     return (
         <section ref={projectsSection} className={styles.projects}>
             <div className={styles["projects-header"]}>
-                <p>featured projects</p>
-                <h1>properties on the rise</h1>
-                <p>explore a selection of our properties in greater depth</p>
-                <MainBtn link="/projects">view all projects</MainBtn>
+                <h1>Properties on the Rise</h1>
+                <p>Explore a selection of our properties in greater depth</p>
+                <MainBtn link="/projects" variant="variant2">view projects</MainBtn>
             </div>
             <div ref={linksWrapper} className={styles["projects-content"]}>
                 {projects.map((project, i) => {

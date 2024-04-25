@@ -13,7 +13,7 @@ export default function Index() {
 
         gsap.fromTo(contactWrapper.current.children[0], {
             opacity: 0,
-            y: "7vh",
+            y: "5vh",
         }, {
             opacity: 1,
             y: 0,
@@ -31,7 +31,7 @@ export default function Index() {
         <div ref={contactWrapper} className={styles["contact-wrapper"]}>
             <div>
                 <h1>Unlock the door<br />to homeownership</h1>
-                <MainBtn link="/contact">contact us</MainBtn>
+                <MainBtn link="/contact" variant="variant2">contact us</MainBtn>
             </div>
         </div>
     )

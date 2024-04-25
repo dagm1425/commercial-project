@@ -34,9 +34,9 @@ export default function Index() {
     return (
         <div className={styles.hero}>
             <div className={styles["hero-text"]}>
-                <h1>Built with quality, delivered<br/> on time</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet est modi voluptas tenetur ullam impedit. Accusamus facilis natus voluptates eligendi placeat.</p>
-                <MainBtn link="/about">learn more</MainBtn>
+                <h1>Modern Design Meets Enduring Quality</h1>
+                <p>Discover thoughtfully designed apartments, crafted with your well-being in mind. Every detail enhances your everyday life, fostering a sense of comfort and serenity</p>
+                <MainBtn link="/about" variant="variant1">learn more</MainBtn>
             </div>
             <HeroVid /> 
         </div>

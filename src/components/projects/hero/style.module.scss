@@ -13,15 +13,18 @@
         z-index: 10;
     }
 
-    h1, p:nth-child(3) {
+    p:nth-child(3) {
         width: 50%;
-        padding-left: 3rem;
     }
 
     h1 {
-        font-size: 4.25rem;
-        font-weight: 600;
+        font-size: 4rem;
         text-transform: capitalize;
-        margin-bottom: 1rem;
+        margin-top: 4.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    p {
+        line-height: 1.5rem;
     }
 }

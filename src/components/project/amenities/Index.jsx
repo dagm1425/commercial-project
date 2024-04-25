@@ -34,7 +34,7 @@ export default function Index({ amenities }) {
                     <div className={styles["icon-wrapper"]}>
                         <img src={`/icons/${amenity.src}`} alt={amenity.title} />
                     </div>
-                    <h3>{amenity.title}</h3>
+                    <h2>{amenity.title}</h2>
                     <p>{amenity.desc}</p>
                 </div>
             ))}

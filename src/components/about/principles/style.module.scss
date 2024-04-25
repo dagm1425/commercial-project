@@ -17,21 +17,20 @@
             opacity: .5;
         }
     }
-}
 
+    .project-features-grid {
+        display: grid;
+        gap: 2.75rem 6rem;
+        grid-template-columns: repeat(2, 1fr);
 
-.project-features-grid {
-    display: grid;
-    gap: 2.75rem 6rem;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.project-feature {
-    h3 {
-        font-size: 1.325rem;
-        font-weight: 400;
-        text-transform: uppercase;
-        margin-bottom: 1rem;
-        opacity: .8;
+        .project-feature {
+            h3 {
+                font-size: 1.325rem;
+                font-weight: 400;
+                text-transform: uppercase;
+                margin-bottom: 1rem;
+                opacity: .8;
+            }
+        }
     }
 }

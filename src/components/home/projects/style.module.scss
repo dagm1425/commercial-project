@@ -1,97 +1,90 @@
 .projects {
     padding: 5rem;
-}
 
-.projects-header {
-    padding-left: 3rem;
-    margin-bottom: 4rem;
-
-    h1 {
-        font-size: 3rem;
-        text-transform: capitalize;
-        margin-bottom: .325rem;
-    }
-
-    p:nth-child(1) {
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: .125rem;
-        margin-bottom: .5rem;
-    }
-
-    p:nth-child(3) {
-        font-size: 1.125rem;
-        text-transform: capitalize;
-        margin-bottom: 1.75rem;
-    }
-}
-
-.projects-content {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-.project-link {
-    display: inline-block;
-    max-width: 30%;
-    text-decoration: none;
-    color: #000;
-    cursor: pointer;
-
-    &:hover .link-img-wrapper > img {
-        transform: scale(1.125);
-    }
-
-    &:hover .project-desc p:nth-child(2) {
-        padding-left: 2.25rem;
-    }
-
-    &:hover .project-desc p:nth-child(2) > svg {
-        left: -.5rem;
-        opacity: 1;
-    }
-}
-
-.link-img-wrapper {
-    height: 90%;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 0.5rem;
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: fill;
-        transition: transform 350ms ease-in-out;
-    }
-}
-
-.project-desc {
-    padding: 1rem 0;
-
-    p:nth-child(2) {
-        position: relative;
-        font-size: 1.625rem;
-        font-weight: 600;
-        text-transform: capitalize;
-        transition: all 250ms ease-in-out;
-
-
-        svg {
-            position: absolute;
-            font-size: 2.5rem;
-            left: -1.5rem;
-            opacity: 0;
-            transition: all 250ms ease-in-out;
+    .projects-header {
+        padding-left: 3rem;
+        margin-bottom: 4rem;
+    
+        h1 {
+            font-size: 3.75rem;
+            margin-bottom: .425rem;
+        }
+    
+        p {
+            font-size: 1.275rem;
+            margin-bottom: .625rem;
         }
     }
     
+    .projects-content {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
 
-    p:nth-child(1) {
-        font-size: .75rem;
-        text-transform: uppercase;
-        letter-spacing: .125rem;
-        margin-bottom: .25rem;
+        .project-link {
+            display: inline-block;
+            max-width: 30%;
+            text-decoration: none;
+            color: #000;
+            cursor: pointer;
+        
+            &:hover .link-img-wrapper > img {
+                transform: scale(1.05);
+            }
+        
+            &:hover .project-desc p:nth-child(2) {
+                padding-left: 2.25rem;
+            }
+        
+            &:hover .project-desc p:nth-child(2) > svg {
+                left: -.5rem;
+            }
+        
+            .link-img-wrapper {
+                height: 90%;
+                margin: 0 auto;
+                overflow: hidden;
+                border-radius: 0.5rem;
+            
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: fill;
+                    transition: transform 350ms ease-in-out;
+                }
+            }
+
+            .project-desc {
+                padding: 1.375rem 0;
+            
+                p:nth-child(2) {
+                    position: relative;
+                    font-size: 1.775rem;
+                    font-weight: 500;
+                    text-transform: capitalize;
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                    transition: all 250ms ease-in-out;
+            
+                    svg {
+                        position: absolute;
+                        font-size: 2.5rem;
+                        left: -2rem;
+                        margin-top: -.175rem;
+                        transition: all 250ms ease-in-out;
+                    }
+                }
+                
+                p:nth-child(1) {
+                    font-size: .825rem;
+                    text-transform: uppercase;
+                    letter-spacing: .125rem;
+                    margin-bottom: .425rem;
+                }
+            }
+        }
     }
 }
+
+
+
+

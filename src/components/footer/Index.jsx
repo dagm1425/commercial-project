@@ -6,31 +6,25 @@ import { FaInstagram } from "react-icons/fa";
 export default function Index() {
     return (
         <div className={styles["footer-wrapper"]}>
-            <div className={styles["footer-content"]}>
-                <div className={styles["left-div"]}>
-                    {/* <div className="logo">LOGO</div> */}
-                    <h2>Addis skyline <br />realty</h2>
-                    <p>Lorem ipsum dolor sit amet <br />Addis Ababa, Ethiopia</p>
+            <div className={styles["footer-main"]}>
+                <div className={styles["footer-info"]}>
+                    <h2>your trusted<br/>real estate partner</h2>
+                    <div>
+                        <p>general enquiries</p>
+                        <div>
+                            <a href="#">info@asaitaproperties.com</a><br />
+                            <a href="#">+251 118 71 26 63/64/65</a>
+                        </div>
+                    </div>
                 </div>
-                <div className={styles["center-div"]}>
-                    <h3>quick links</h3>
-                    <a href="">home</a>
-                    <a href="">projects</a>
-                    <a href="">about</a>
-                    <a href="">contact</a>
-                </div>
-                <div className={styles["right-div"]}>
-                    <h3>find us on</h3>
+                <div className={styles["footer-branding"]}>
+                    <div className={styles.logo}>
+                        <img src="/images/other/logo.png" alt="logo" />
+                    </div>
                     <div className={styles["socials-wrapper"]}>
-                        <a href="">
-                            <FaFacebookF />
-                        </a>
-                        <a href="">
-                            <FaInstagram />
-                        </a>
-                        <a href="">
-                            <FaXTwitter />
-                        </a>
+                        <a href="#"><FaFacebookF /></a>
+                        <a href="#"><FaInstagram /></a>
+                        <a href="#"><FaXTwitter /></a>
                     </div>
                 </div>
             </div>
@@ -39,3 +33,4 @@ export default function Index() {
         </div>
     )
 }
+
