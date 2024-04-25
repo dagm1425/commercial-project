@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import styles from "./style.module.scss";
-import { MdArrowForwardIos } from "react-icons/md";
-import { MdArrowBackIos } from "react-icons/md";
+import { LiaLongArrowAltRightSolid } from "react-icons/lia";
+import { LiaLongArrowAltLeftSolid } from "react-icons/lia";
 
 export default function Index({ projectImg }) {
     const [imgIndex, setImgIndex] = useState(0);
@@ -29,13 +29,13 @@ export default function Index({ projectImg }) {
                 })}
             </div>
             <div className={styles["slider-controller"]}>
-                <h2>{`0${imgIndex + 1} / 0${projectImg.length}`}</h2>
+                <div />
                 <div className={styles["buttons-wrapper"]}>
                     <button disabled={imgIndex === 0} onClick={prevImg}>
-                        <MdArrowBackIos />
+                        <LiaLongArrowAltLeftSolid />
                     </button>
                     <button disabled={imgIndex === projectImg.length - 1} onClick={nextImg}>
-                        <MdArrowForwardIos />
+                        <LiaLongArrowAltRightSolid />
                     </button>
                 </div>
             </div>
