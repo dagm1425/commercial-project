@@ -21,6 +21,7 @@ export default function Index({ features }) {
                 scrub: 2,
                 toggleActions: "restart none none none",
                 pin: true,
+                // pinSpacing: false
                 // markers: true,
             },
         })
@@ -49,7 +50,7 @@ export default function Index({ features }) {
           
           tl.to(projectFeatures.current.children[1], {
             // top: "-0.725rem",
-            top: "-0.125rem",
+            top: "-0.25rem",
             // ease: "power1.out" 
             // duration: 5
           }, "a")
@@ -68,7 +69,7 @@ export default function Index({ features }) {
           
           tl.to(projectFeatures.current.children[2], {
             // top: "0.725rem",
-            top: "0.625rem",
+            top: "0.55rem",
             // ease: "power1.out" 
             // duration: 5
           }, "b")
@@ -100,18 +101,18 @@ export default function Index({ features }) {
             // }, "d")
             .to(projectFeatures.current.children[3], {
               // top: "1.825rem",
-              top: "-0.975rem",
+              top: "-1.025rem",
               paddingTop: "3rem",
               // ease: "power1.out" 
               // marginTop: "-0.5rem",
               // duration: 5
             }, "c")
             .to(projectFeatures.current.children[3].children[0].children[1], {
-              marginTop: "-5.25rem",
+              marginTop: "-5.625rem",
             }, "c")
-            .to(projectFeaturesWrapper.current, {
-              height: "190vh"
-            }, "c")
+            // .to(projectFeaturesWrapper.current, {
+            //   height: "190vh"
+            // }, "c")
           
     }, []);
     

@@ -31,18 +31,17 @@ export default function Index({ projects }) {
 
         gsap.fromTo(linksRefs.current, {
             opacity: 0,
-            y: "4vh",
+            y: "5vh",
           }, {
             opacity: 1,
             y: 0,
-            duration: .3,
+            duration: .7,
             ease: "power1.out",
-            stagger: .2,
+            // stagger: .12,
             scrollTrigger: {
               trigger: linksWrapper.current,
-              start: "top 70%",
-              end: "+=250",
-              markers: true
+              start: "top 90%",
+              end: "+=300",
             },
           })
     }, [])
