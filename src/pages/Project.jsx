@@ -20,7 +20,7 @@ export default function Project({ projects }) {
         },
         {
             title: "great investment value",
-            desc: "our apartments offer not just a luxurious home, but also a sound financial decision. boasting high resale value and premium rental income, you can expect to see a return on your investment in about 8 years",
+            desc: "Our apartments offer not just a luxurious home, but also a sound financial decision. Boasting high resale value and premium rental income, you can expect to see a return on your investment in about 8 years.",
             icon: <FaHandHoldingDollar />
         },
         {

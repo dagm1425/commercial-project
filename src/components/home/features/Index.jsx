@@ -7,16 +7,22 @@ export default function Index() {
     const features = [
         {
             label: "elegant openness",
-            title: "meticulous design",
-            desc: "we believe in an uncompromising vision that permeates every design element, meticulously crafted from architectural inception to the curated selection of interior elements, creating environments that are as relevant to their surroundings as they are adaptable to evolving needs.",
+            title: "Meticulous Design",
+            desc: "We believe in an uncompromising vision that permeates every design element, meticulously crafted from architectural inception to the curated selection of interior elements, creating environments that are as relevant to their surroundings as they are adaptable to evolving needs.",
             src: "furnishing-materials.png",
         },
         {
-            label: "Remarkable experience",
-            title: "Tailored to you",
+            label: "remarkable experience",
+            title: "Tailored to You",
             desc: "Meticulously designed for excellence, our expertise curates an unparalleled experience. Immerse yourself in a lifestyle exclusive to residents here, an opportunity unmatched by any other development.",
             src: "woman-with-design-book.png",
         },
+        {
+            label: "enduring value",
+            title: "Built to Last",
+            desc: "We invest in quality construction materials to ensure your property retains its value for generations to come. Experience the peace of mind that comes with a home built with integrity and meticulous attention to detail.",
+            src: "rebar.png",
+        },          
     ];
 
     // useEffect(() => {
