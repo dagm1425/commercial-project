@@ -8,13 +8,13 @@ export default function Index() {
         {
             label: "elegant openness",
             title: "Meticulous Design",
-            desc: "We believe in an uncompromising vision that permeates every design element, meticulously crafted from architectural inception to the curated selection of interior elements, creating environments that are as relevant to their surroundings as they are adaptable to evolving needs.",
+            desc: "We meticulously craft highly functional environments that seamlessly blend with their surroundings and gracefully adapt to your evolving needs, from the architectural inception to the curated selection of interior elements.",
             src: "furnishing-materials.png",
         },
         {
             label: "remarkable experience",
             title: "Tailored to You",
-            desc: "Meticulously designed for excellence, our expertise curates an unparalleled experience. Immerse yourself in a lifestyle exclusive to residents here, an opportunity unmatched by any other development.",
+            desc: "Rigorously designed for excellence, our expertise curates an unparalleled experience. Immerse yourself in a lifestyle exclusive to residents here, an opportunity unmatched by any other development in the ocuntry.",
             src: "woman-with-design-book.png",
         },
         {
