@@ -45,7 +45,9 @@ export default function Index() {
     return (
         <header className={styles.header}>
             <div className={styles.logo}>
-                <img src="/images/other/logo.png" alt="logo" />
+                <Link to="/">
+                    <img src="/images/other/logo.png" alt="logo" />
+                </Link>
             </div>
             <nav className={styles.nav}>
                 {links.map((link, i) => {
