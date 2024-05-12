@@ -14,7 +14,7 @@ export default function Project({ projects }) {
     const { id } = useParams();
     const features = [
         {
-            title: "here, everything works just fine",
+            title: "everything works just fine",
             desc: "From water system to elevators and electricity, every facility works as it should be. We are taking great care to make sure that your life is uninterrupted with unwanted surprises.",
             icon: <HiWrenchScrewdriver />
         },
