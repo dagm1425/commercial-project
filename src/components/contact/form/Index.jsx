@@ -6,8 +6,7 @@ import emailjs from "@emailjs/browser";
 import { FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
-import { LuDot } from "react-icons/lu";
-import { BsArrowRightShort } from "react-icons/bs";
+import MainBtn from "../../common/main-btn/Index";
 
 export default function Index() {
     const form = useRef(null);
@@ -102,11 +101,7 @@ export default function Index() {
                         <label htmlFor="user_message">message</label>
                         <textarea id="user_message" name="user_message" rows={1} cols={45} required ></textarea>
                 </div>
-                <button type="submit">
-                    <LuDot />
-                    <span>send message</span>
-                    <BsArrowRightShort />
-                </button>
+                <MainBtn variant="variant2">send message</MainBtn>
             </form>
             {(isSendingMsg || isMsgSent || isMsgNotSent) && 
             <div className={styles.snackbar}>

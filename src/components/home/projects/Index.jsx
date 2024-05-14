@@ -29,21 +29,21 @@ export default function Index({ projects }) {
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.fromTo(linksRefs.current, {
-            opacity: 0,
-            y: "5vh",
-          }, {
-            opacity: 1,
-            y: 0,
-            duration: .7,
-            ease: "power1.out",
+            gsap.fromTo(linksRefs.current, {
+                opacity: 0,
+                y: "5vh",
+              }, {
+                opacity: 1,
+                y: 0,
+                duration: .7,
+                ease: "power1.out",
             // stagger: .12,
-            scrollTrigger: {
-              trigger: linksWrapper.current,
-              start: "top 90%",
-              end: "+=300",
-            },
-          })
+                scrollTrigger: {
+                  trigger: linksWrapper.current,
+                  start: "top 90%",
+                  end: "+=300",
+                },
+              })
     }, [])
 
     // useLayoutEffect(() => {
@@ -69,7 +69,8 @@ export default function Index({ projects }) {
             <div className={styles["projects-header"]}>
                 <h1>Properties on the Rise</h1>
                 <p>Explore a selection of our properties in greater depth</p>
-                <MainBtn link="/projects" variant="variant2">view projects</MainBtn>
+                <MainBtn variant="variant2"><Link to="/projects">view projects</Link></MainBtn>
+
             </div>
             <div ref={linksWrapper} className={styles["projects-content"]}>
                 {projects.map((project, i) => {

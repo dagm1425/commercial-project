@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import MainBtn from "../../common/main-btn/Index";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 export default function Index() {
     const contactWrapper = useRef(null);
@@ -31,7 +32,7 @@ export default function Index() {
         <div ref={contactWrapper} className={styles["contact-wrapper"]}>
             <div>
                 <h1>Unlock the door<br />to homeownership</h1>
-                <MainBtn link="/contact" variant="variant2">contact us</MainBtn>
+                <MainBtn variant="variant2"><Link to="/contact">contact us</Link></MainBtn>
             </div>
         </div>
     )

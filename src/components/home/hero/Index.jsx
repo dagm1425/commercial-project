@@ -3,6 +3,7 @@ import gsap from "gsap"
 import styles from "./style.module.scss";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MainBtn from "../../common/main-btn/Index"
+import { Link } from "react-router-dom";
 
 export default function Index() {
     const video = useRef(null);
@@ -10,16 +11,16 @@ export default function Index() {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.to(video.current, {
-            width: "98vw",
-            borderRadius: 0,
-            ease: "none",
-            scrollTrigger: {
-                trigger: video.current,
-                start: "top 65%",
-                end: "+=380",
-                scrub: 1,
-            },
+            gsap.to(video.current, {
+                width: "98vw",
+                borderRadius: 0,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: video.current,
+                    start: "top 65%",
+                    end: "+=380",
+                    scrub: 1,
+                },
         })
     }, [])
 
@@ -36,7 +37,7 @@ export default function Index() {
             <div className={styles["hero-text"]}>
                 <h1>Modern Design Meets Enduring Quality</h1>
                 <p>Discover thoughtfully designed apartments, crafted with your well-being in mind. Every detail enhances your everyday life, fostering a sense of comfort and serenity</p>
-                <MainBtn link="/about" variant="variant1">learn more</MainBtn>
+                <MainBtn variant="variant1"><Link to="/about">learn more</Link></MainBtn>
             </div>
             <HeroVid /> 
         </div>
