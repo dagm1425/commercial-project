@@ -12,8 +12,8 @@ export default function Index() {
                     <div>
                         <p>general enquiries</p>
                         <div>
-                            <a href="#">info@asaitaproperties.com</a><br />
-                            <a href="#">+251 118 71 26 63/64/65</a>
+                            <a href="mailto:info@asaitaproperties.com">info@asaitaproperties.com</a><br />
+                            <a href="tel:+251118712663">+251 118 71 26 63</a>
                         </div>
                     </div>
                 </div>

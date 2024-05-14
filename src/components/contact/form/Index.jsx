@@ -40,7 +40,7 @@ export default function Index() {
         e.preventDefault();
         setIsSendingMsg(true)
     
-        emailjs.sendForm('service_id', 'template_id', form.current, 'YOUR_PUBLIC_KEY')
+        emailjs.sendForm('service_pji78yp', 'template_t5i64ih', form.current, 'XuRBbkZ5LQxg-_J1g')
           .then(() => {
             (e.target).reset();
             setIsSendingMsg(false);
@@ -72,14 +72,14 @@ export default function Index() {
                 </div>
                 <div className={styles["contact-item"]}>
                     <p>chat to us</p>
-                    <p>info@asaitaproperties.com</p>
+                    <a href="mailto:info@asaitaproperties.com">info@asaitaproperties.com</a><br />
                 </div>
                 <div className={styles["contact-item"]}>
                     <p>social media</p>
                     <div className={styles["socials-wrapper"]}>
-                        <a href="#"><FaFacebookF /></a>
-                        <a href="#"><FaInstagram /></a>
-                        <a href="#"><FaXTwitter /></a>
+                        <a href="https://www.facebook.com/profile.php?id=61559384081074" target="_blank"><FaFacebookF /></a>
+                        <a href="https://www.instagram.com/asaita00/" target="_blank"><FaInstagram /></a>
+                        <a href="https://twitter.com/Asaita00" target="_blank"><FaXTwitter /></a>
                     </div>
                 </div>
             </div>
