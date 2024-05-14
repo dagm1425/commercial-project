@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from "./style.module.scss";
 // import { MdKeyboardArrowRight } from "react-icons/md";
 // import gsap from 'gsap';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { LuDot } from "react-icons/lu";
 
 export default function Index() {
@@ -10,6 +10,16 @@ export default function Index() {
     // const [dropdownProject, setDropdownProject] = useState(0);
     const [activeLink, setActiveLink] = useState("");
     const links = [ "home", "about", "projects", "contact"];
+    const location = useLocation();
+
+    useEffect(() => {
+      const pathname = location.pathname;
+      const pathSegments = pathname.split('/'); 
+      const initialSegment = pathSegments.length > 1 ? pathSegments[1] : 'home';
+
+      setActiveLink(initialSegment);
+     
+    }, [location]); 
     // const dropdownContent = [
     //     { 
     //         id: "piazza-downtown",
@@ -53,47 +63,11 @@ export default function Index() {
                 {links.map((link, i) => {
                     return (
                         <div key={i} className={`${styles["nav-link"]} ${link === activeLink ? styles.active : ""}`}>
-                            <Link to={`/${i === 0 ? "" : link}`} onClick={() => setActiveLink(link)}>{link}</Link>
+                            <Link to={`/${i === 0 ? "" : link}`}>{link}</Link>
                             <LuDot />
                         </div>
                     )
                 })}
-                {/* <Link to="/" className="navLink">home</Link> */}
-                {/* <div className="dropdown" onMouseEnter={() => setIsDropdownActive(true)} onMouseLeave={() => setIsDropdownActive(false)}>
-                    <div className={`dropdownMenu ${isDropdownActive ? "active" : ''}`}>
-                        <div className="dropdownMenuTitles">
-                            {dropdownContent.map((el, i) => {
-                                return (
-                                    <Link key={i} to={`/projects/${dropdownContent[dropdownProject].id}`} className={`dropdownMenuLink ${dropdownProject === i ? "active" : ""}`} onMouseEnter={() => setDropdownProject(i)}>
-                                        <MdKeyboardArrowRight />
-                                        <p className="dropdownMenuTitle">
-                                            {el.title.split(" ", 2).join(" ")}
-                                        </p>    
-                                    </Link>
-                                )
-                            })}
-                        </div>
-                        <div className="dropdownMenuMain">
-                            <div className="dropdownProjectMain">
-                                <p>
-                                    {dropdownContent[dropdownProject].title}
-                                </p>
-                                <p>
-                                    {dropdownContent[dropdownProject].desc}
-                                </p>
-                                <Link to={`/projects/${dropdownContent[dropdownProject].id}`} className="dropdownProjectLink">Learn more</Link>
-                            </div>
-                            <div className="dropdownProjectImgWrapper">
-                                <img src={`/images/projects/${projectName}/${projectName}.png`} 
-                                     alt={dropdownContent[dropdownProject].title}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
-                {/* <Link to="/projects" className="navLink">projects</Link>
-                <Link to="/about" className="navLink">about</Link>
-                <Link to="/contact" className="navLink">contact</Link> */}
             </nav>
         </header>
     )
