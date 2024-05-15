@@ -76,4 +76,24 @@
             }
         }
     }
+
+    @media screen and (max-width: 1024px) {
+        padding: 3rem 1.5rem;
+
+        .img-slidder {
+            .img-wrapper {
+                width: 70vw;
+            }    
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        padding: 2.5rem 1rem;
+
+        .img-slidder {
+            .img-wrapper {
+                width: 100vw;
+            }    
+        }
+    }
 }

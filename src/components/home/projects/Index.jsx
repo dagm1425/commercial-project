@@ -29,6 +29,9 @@ export default function Index({ projects }) {
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
 
+        let mm = gsap.matchMedia();
+
+        mm.add("(min-width: 600px)", () => {
             gsap.fromTo(linksRefs.current, {
                 opacity: 0,
                 y: "5vh",
@@ -37,13 +40,13 @@ export default function Index({ projects }) {
                 y: 0,
                 duration: .7,
                 ease: "power1.out",
-            // stagger: .12,
                 scrollTrigger: {
                   trigger: linksWrapper.current,
                   start: "top 90%",
                   end: "+=300",
                 },
               })
+        })
     }, [])
 
     // useLayoutEffect(() => {

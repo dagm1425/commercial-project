@@ -11,6 +11,9 @@ export default function Index() {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
+        let mm = gsap.matchMedia();
+
+        mm.add("(min-width: 1024px)", () => {
             gsap.to(video.current, {
                 width: "98vw",
                 borderRadius: 0,
@@ -21,6 +24,7 @@ export default function Index() {
                     end: "+=380",
                     scrub: 1,
                 },
+            })
         })
     }, [])
 

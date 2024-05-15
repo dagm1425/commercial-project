@@ -67,7 +67,7 @@ export default function Index() {
                         <div className={styles["stat-icon-wrapper"]}>
                             {stat.icon}
                         </div>
-                        <h1 ref={(ref) => odometerRefs.current.push(ref)} data-value={stat.value} className="odometer">0</h1>
+                        <h2 ref={(ref) => odometerRefs.current.push(ref)} data-value={stat.value} className="odometer">0</h2>
                         <p>{stat.label}</p>
                     </div>
                 )

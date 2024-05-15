@@ -13,7 +13,10 @@ export default function Index({ features }) {
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.to(projectFeaturesHeader.current, {
+        let mm = gsap.matchMedia();
+
+        mm.add("(min-width: 600px)", () => {
+          gsap.to(projectFeaturesHeader.current, {
             scrollTrigger: {
                 trigger: projectFeaturesHeader.current,
                 start: "top 10%",
@@ -110,10 +113,13 @@ export default function Index({ features }) {
             .to(projectFeatures.current.children[3].children[0].children[1], {
               marginTop: "-5.625rem",
             }, "c")
-            // .to(projectFeaturesWrapper.current, {
-            //   height: "190vh"
-            // }, "c")
-          
+
+            if (window.matchMedia("(max-width: 1024px)").matches) {
+              tl.to(projectFeaturesWrapper.current, {
+                  height: "115vh",
+              }, "c");
+          }
+        });
     }, []);
     
     return (

@@ -6,4 +6,8 @@
     width: 65%;
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 20%, rgba(155,124,98,0) 100%);
+
+    @media screen and (max-width: 600px) {
+        width: 85%;
+    }
 }

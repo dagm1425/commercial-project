@@ -10,6 +10,21 @@
             font-size: 3.5rem;
             margin-bottom: 1.75rem;
         }
-    }
 
+    }
+    
+    @media screen and (max-width: 1024px) {
+        height: 40vh;
+    }
+    
+    @media screen and (max-width: 600px) {
+        height: 35vh;
+
+        div {
+            h1 {
+                font-size: 2.75rem;
+                margin-bottom: .5rem;
+            } 
+        }
+    }
 }

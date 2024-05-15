@@ -27,5 +27,29 @@
         border: none;
         border-radius: 25px;
     }
+
+    @media screen and (max-width: 1024px) {
+        .hero-text {
+            padding: 2rem 0;
+            width: 87%;
+            margin: 0 auto;
+        
+            h1 {
+                font-size: 3rem;
+                line-height: 3rem;
+            }
+        
+            p {
+                font-size: 1.25rem;
+                line-height: 1.675rem;
+            }
+        }
+
+        .hero-vid {
+            width: 99vw;
+            border-radius: 0px;
+            margin-top: 1.5rem;
+        }
+    }
 }    
 

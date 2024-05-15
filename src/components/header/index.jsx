@@ -4,12 +4,14 @@ import styles from "./style.module.scss";
 // import gsap from 'gsap';
 import { Link, useLocation } from "react-router-dom";
 import { LuDot } from "react-icons/lu";
+import { IoMdClose } from "react-icons/io";
 
 export default function Index() {
     // const [isDropdownActive, setIsDropdownActive] = useState(false);
     // const [dropdownProject, setDropdownProject] = useState(0);
     const [activeLink, setActiveLink] = useState("");
     const links = [ "home", "about", "projects", "contact"];
+    const [isLinksDrawerActive, setIsLinksDrawerActive] = useState(false);
     const location = useLocation();
 
     useEffect(() => {
@@ -59,16 +61,22 @@ export default function Index() {
                     <img src="/images/other/logo.png" alt="logo" />
                 </Link>
             </div>
-            <nav className={styles.nav}>
+            <nav className={`${styles.nav} ${isLinksDrawerActive ? styles.active : ""}`}>
+                <button onClick={() => setIsLinksDrawerActive(false)}>
+                    <IoMdClose />
+                </button>
                 {links.map((link, i) => {
                     return (
                         <div key={i} className={`${styles["nav-link"]} ${link === activeLink ? styles.active : ""}`}>
-                            <Link to={`/${i === 0 ? "" : link}`}>{link}</Link>
+                            <Link to={`/${i === 0 ? "" : link}`} onClick={() => setIsLinksDrawerActive(false)}>{link}</Link>
                             <LuDot />
                         </div>
                     )
                 })}
             </nav>
+            <button onClick={() => setIsLinksDrawerActive(true)}>
+                <img src="/icons/menu.png" alt="menu-icon" />
+            </button>
         </header>
     )
 }

@@ -1,4 +1,20 @@
 .location-wrapper {
     padding-bottom: 4rem;
+
+    @media screen and (max-width: 1024px) {
+        padding-bottom: 3rem;
+
+        iframe {
+            height: 320px;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        padding-bottom: 2.5rem;
+
+        iframe {
+            height: 210px;
+        }
+    }
 }
 
