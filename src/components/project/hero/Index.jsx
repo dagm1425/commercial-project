@@ -25,22 +25,20 @@ export default function Index({ project }) {
     ];
 
     return (
-        <div className={styles["project-wrapper"]}>
-            <div style={{ backgroundImage: `url("/images/projects/${projectName}/living-room.png")` }} className={styles["project-hero"]}>
-                <BreadCrumb links={["home", "projects", project.title]} />
-                <div className={styles["project-main"]}>
-                    <h1>{project.title}</h1>
-                    <p>{project.desc}</p>
-                    <div className={styles["specs-wrapper"]}>
-                        {specs.map((spec, i) => {
-                            return (
-                                <div key={i} className={styles.spec}>
-                                    <h3>{project.specs[spec.name]}</h3>
-                                    <p>{spec.title}</p>
-                                </div>
-                            )
-                        })}
-                    </div>
+        <div className={styles["project-wrapper"]} style={{ backgroundImage: `url("/images/projects/${projectName}/living-room.png")` }}>
+            <BreadCrumb links={["home", "projects", project.title]} />
+            <div className={styles["project-main"]}>
+                <h1>{project.title}</h1>
+                <p>{project.desc}</p>
+                <div className={styles["specs-wrapper"]}>
+                    {specs.map((spec, i) => {
+                        return (
+                            <div key={i} className={styles.spec}>
+                                <h3>{project.specs[spec.name]}</h3>
+                                <p>{spec.title}</p>
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
             <Overlay />

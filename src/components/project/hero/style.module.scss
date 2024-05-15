@@ -1,18 +1,16 @@
 .project-wrapper {
     position: relative;
+    height: 450px; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    color: #fff;
+    padding: 3rem 5rem;
 
     p, h1, h3, a {
         position: relative;
         z-index: 10;
     }
-    
-    .project-hero {
-        height: 450px; 
-        background-position: center; 
-        background-repeat: no-repeat; 
-        background-size: cover; 
-        color: #fff;
-        padding: 3rem 5rem;
     
     .project-main {
         width: 50%;
