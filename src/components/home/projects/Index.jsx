@@ -49,23 +49,12 @@ export default function Index({ projects }) {
         })
     }, [])
 
-    // useLayoutEffect(() => {
-    //     setTimeout(() => {
-    //         ScrollTrigger.refresh()
-    //     }, 2000);
-    // }, []);
-
     const handleIntersect = async (entries) => {
         const entry = entries[0]; 
         if (entry.isIntersecting) {
             ScrollTrigger.refresh();
         }
     }
-
-    // const refresh = () => {
-    //     console.log("Refreshed")
-    //     ScrollTrigger.refresh()
-    // }
 
     return (
         <section ref={projectsSection} className={styles.projects}>
@@ -84,7 +73,6 @@ export default function Index({ projects }) {
                             <div className={styles["link-img-wrapper"]}>
                                 <img src={`/images/projects/${projectName}/${projectName}-ext.png`} 
                                     alt={project.title}
-                                    // onLoad={() => ScrollTrigger.refresh()}
                                 />
                             </div>
                             <div className={styles["project-desc"]}>

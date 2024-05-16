@@ -3,10 +3,8 @@ import { useEffect, useRef } from "react";
 import styles from "./style.module.scss";
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import MainBtn from "../main-btn/Index";
 import { useGSAP } from "@gsap/react";
 import { Link } from "react-router-dom";
-// import { RiArrowRightUpLine } from "react-icons/ri";
 import { RxArrowTopRight } from "react-icons/rx";
 
 export default function Index({ listItems }) {
