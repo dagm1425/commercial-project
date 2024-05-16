@@ -67,10 +67,10 @@ export default function Index() {
                 </button>
                 {links.map((link, i) => {
                     return (
-                        <div key={i} className={`${styles["nav-link"]} ${link === activeLink ? styles.active : ""}`}>
-                            <Link to={`/${i === 0 ? "" : link}`} onClick={() => setIsLinksDrawerActive(false)}>{link}</Link>
+                        <Link key={i} className={`${styles["nav-link"]} ${link === activeLink ? styles.active : ""}`} to={`/${i === 0 ? "" : link}`} onClick={() => setIsLinksDrawerActive(false)}>
+                            {link}
                             <LuDot />
-                        </div>
+                        </Link>
                     )
                 })}
             </nav>
