@@ -96,28 +96,42 @@
     }
     
     @media screen and (max-width: 1024px) {
-        height: 140vh;
+        flex-direction: column;
+        height: auto;
         padding: 3rem 1.5rem;
 
         .project-features-header {
             h2 {
                 font-size: 2.5rem;
+                margin-bottom: 2.75rem;
             }
         }
 
         .project-features {
-            width: 50%;
-
+            position: static;
+            display: grid;
+            justify-items: center;
+            grid-template-columns: repeat(2, 1fr);
+            width: 100%;
+            margin-left: 0;
+            gap: 1.5rem;
+    
             .project-feature {
+                position: static;
                 padding: 2rem 1.5rem 1.5rem;
                 margin-bottom: 1.5rem;
+                transform: none !important;
 
                 .feature-header {
                     div {
                         width: 40px;
                         height: 40px;
-                        margin-top: -4rem;
+                        margin-top: -3.8rem;
                         margin-right: -1.5rem;
+                    }
+
+                    h3 {
+                        font-size: 1.35rem;
                     }
                 }
             }

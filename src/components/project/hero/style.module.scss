@@ -34,6 +34,12 @@
     
     @media screen and (max-width: 1024px) {
         .project-main {
+            margin-top: 3.25rem; 
+        }
+    }
+
+    @media screen and (max-width: 825px) {
+        .project-main {
             margin-top: 1.75rem; 
         }
     }

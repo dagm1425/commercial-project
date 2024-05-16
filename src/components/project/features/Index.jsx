@@ -15,7 +15,7 @@ export default function Index({ features }) {
 
         let mm = gsap.matchMedia();
 
-        mm.add("(min-width: 600px)", () => {
+        mm.add("(min-width: 1025px)", () => {
           gsap.to(projectFeaturesHeader.current, {
             scrollTrigger: {
                 trigger: projectFeaturesHeader.current,
@@ -113,12 +113,6 @@ export default function Index({ features }) {
             .to(projectFeatures.current.children[3].children[0].children[1], {
               marginTop: "-5.625rem",
             }, "c")
-
-            if (window.matchMedia("(max-width: 1024px)").matches) {
-              tl.to(projectFeaturesWrapper.current, {
-                  height: "115vh",
-              }, "c");
-          }
         });
     }, []);
     
