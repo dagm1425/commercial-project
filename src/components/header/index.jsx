@@ -22,6 +22,13 @@ export default function Index() {
       setActiveLink(initialSegment);
      
     }, [location]); 
+
+    const handleClick = () => {
+        if (window.matchMedia('(max-width: 600px)').matches) {
+            setIsLinksDrawerActive(false);
+        }
+    };
+    
     // const dropdownContent = [
     //     { 
     //         id: "piazza-downtown",
@@ -67,7 +74,7 @@ export default function Index() {
                 </button>
                 {links.map((link, i) => {
                     return (
-                        <Link key={i} className={`${styles["nav-link"]} ${link === activeLink ? styles.active : ""}`} to={`/${i === 0 ? "" : link}`} onClick={() => setIsLinksDrawerActive(false)}>
+                        <Link key={i} className={`${styles["nav-link"]} ${link === activeLink ? styles.active : ""}`} to={`/${i === 0 ? "" : link}`} onClick={handleClick}>
                             {link}
                             <LuDot />
                         </Link>
