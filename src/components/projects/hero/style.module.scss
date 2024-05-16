@@ -1,62 +1,20 @@
-.projects-wrapper {
-    position: relative;
-    height: 450px; 
-    background-image: url("/images/projects/piazza/living-room.png");
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: fill; 
-    color: #fff;
-    padding: 3rem 5rem;
+@import "../../common/mixins.module.scss";
 
-    p, h1, a {
-        position: relative;
-        z-index: 10;
-    }
+.projects-wrapper {
+    @include hero-wrapper;
+    background-image: url("/images/projects/piazza/living-room.png");
 
     .projects-main {
         width: 50%;
         padding-left: 3rem;
         margin-top: 4.75rem;
-    
-        h1 {
-            font-size: 3.5rem;
-            text-transform: capitalize;
-            margin-bottom: 1.75rem;
-        }
-    
-        p {
-            font-size: 1.175rem;
-            line-height: 1.625rem;
-        }
-    }
-
-    @media screen and (max-width: 1024px) {
-        padding: 3rem 1.5rem;
-        
-        .projects-main {
-            width: 75%;
-        }
     }
 
     @media screen and (max-width: 600px) {
-        height: 320px; 
-        padding: 2.5rem;
-        margin-bottom: 2.5rem;
+        margin-bottom: 2.5rem; 
 
         .projects-main {
-            width: 100%;
-            padding-left: 0;
             margin-top: 2.25rem;
-        
-            h1 {
-                font-size: 2rem;
-                margin-bottom: 1.25rem;
-            }
-        
-            p {
-                font-size: 1.125rem;
-                line-height: 1.375rem;
-            }
         }
     }   
 }
