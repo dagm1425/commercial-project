@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import { useEffect, useRef } from "react";
+import PropTypes from 'prop-types';
 import styles from "./style.module.scss";
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -119,4 +119,15 @@ export default function Index({ listItems }) {
             </div>
         </div>
     )
+}
+
+const FeaturePropType = PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+    src: PropTypes.string.isRequired,
+});
+
+Index.propTypes = {
+    listItems: PropTypes.arrayOf(FeaturePropType).isRequired
 }

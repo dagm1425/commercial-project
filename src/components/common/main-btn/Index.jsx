@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import styles from "./style.module.scss";
 import { LuDot } from "react-icons/lu";
 import { BsArrowRightShort } from "react-icons/bs";
@@ -11,4 +11,9 @@ export default function Index({ children, variant }) {
             <BsArrowRightShort />
         </button>
     )
+}
+
+Index.propTypes = {
+    children: PropTypes.node.isRequired,
+    variant: PropTypes.oneOf(["variant1", "variant2"]).isRequired,
 }

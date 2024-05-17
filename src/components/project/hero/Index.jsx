@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import styles from "./style.module.scss";
 import BreadCrumb from "../../common/bread-crumb/Index";
 import Overlay from "../../common/overlay/Index";
@@ -44,4 +44,24 @@ export default function Index({ project }) {
             <Overlay />
         </div>
     )
+}
+
+const SpecsPropType = PropTypes.shape({
+    floors: PropTypes.string.isRequired,
+    bedrooms: PropTypes.string.isRequired,
+    minMaxArea: PropTypes.string.isRequired,
+    builtUpArea: PropTypes.string.isRequired,
+});
+
+const ProjectPropType = PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+    specs: SpecsPropType.isRequired,
+    location: PropTypes.string.isRequired,
+});
+
+Index.propTypes = {
+    project: ProjectPropType.isRequired
 }

@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import { useGSAP } from "@gsap/react";
 import styles from "./style.module.scss";
 import gsap from "gsap";
@@ -41,3 +41,14 @@ export default function Index({ amenities }) {
         </div>
     )
 }
+
+const AmenityPropType = PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+    src: PropTypes.string.isRequired,
+});
+
+Index.propTypes = {
+    amenities: PropTypes.arrayOf(AmenityPropType).isRequired
+}
+

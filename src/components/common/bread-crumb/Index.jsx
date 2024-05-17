@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from "react";
+import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import styles from "./style.module.scss";
 
@@ -20,4 +20,8 @@ export default function Index({ links }) {
             ))}
         </p>
     )
+}
+
+Index.propTypes = {
+    links: PropTypes.arrayOf(PropTypes.string)
 }

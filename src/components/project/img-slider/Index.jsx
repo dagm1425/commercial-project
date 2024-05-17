@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import { useState } from "react";
 import styles from "./style.module.scss";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
@@ -43,3 +43,11 @@ export default function Index({ projectImg }) {
     )
 }
 
+const ImagePropType = PropTypes.shape({
+    src: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired,
+});
+
+Index.propTypes = {
+    projectImg: PropTypes.arrayOf(ImagePropType).isRequired
+}

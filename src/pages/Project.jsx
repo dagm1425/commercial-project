@@ -1,4 +1,5 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
+import { ProjectPropType } from "../components/common/PropTypes.js";
 import { useParams } from "react-router-dom";
 import ProjectHero from "../components/project/hero/Index.jsx";
 import ProjectImgSlider from "../components/project/img-slider/Index.jsx";
@@ -82,3 +83,6 @@ export default function Project({ projects }) {
     )
 }
 
+Project.propTypes = {
+    projects: PropTypes.arrayOf(ProjectPropType).isRequired
+}

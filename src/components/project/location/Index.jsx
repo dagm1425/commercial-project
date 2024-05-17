@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import styles from "./style.module.scss";
 
 export default function Index({ location }) {
@@ -7,4 +7,8 @@ export default function Index({ location }) {
             <iframe src={location} width="100%" height="420" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
         </div>
     )
+}
+
+Index.propTypes = {
+    location: PropTypes.string.isRequired
 }

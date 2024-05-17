@@ -1,4 +1,5 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
+import { ProjectPropType } from "../../common/PropTypes.js";
 import styles from "./style.module.scss";
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -86,3 +87,8 @@ export default function Index({ projects }) {
         </section>
     )
 }
+
+Index.propTypes = {
+    projects: PropTypes.arrayOf(ProjectPropType).isRequired
+}
+
