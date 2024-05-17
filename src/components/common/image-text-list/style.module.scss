@@ -64,6 +64,11 @@
                     @include link-style;
                 }
             }
+
+            @media screen and (max-width: 1024px) {
+                padding-left: 0rem;
+
+            }
         }
     }
     
