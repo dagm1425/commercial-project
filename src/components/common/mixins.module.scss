@@ -5,7 +5,7 @@
     background-repeat: no-repeat; 
     background-size: cover; 
     color: #fff;
-    padding: 3rem 5rem;
+    padding: 2.25rem 5rem 3rem;
     
     p, h1, a {
         position: relative;
@@ -30,7 +30,7 @@
     }
     
     @media screen and (max-width: 1024px) {
-        padding: 3rem 1.5rem;
+        padding: 2rem 1.5rem;
         
         & > div:nth-child(2) {
             width: 75%;
@@ -39,7 +39,7 @@
 
     @media screen and (max-width: 600px) {
         height: 320px; 
-        padding: 2.5rem 1.25rem;
+        padding: 1.75rem 1.25rem;
 
         & > div:nth-child(2) {
             width: 100%;

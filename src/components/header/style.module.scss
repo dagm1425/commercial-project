@@ -1,4 +1,5 @@
 .header {
+    position: fixed;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -6,7 +7,31 @@
     background-color: #f6f3ee;
     padding: 0 10rem;
     border-bottom: 1px solid #e7d9c3;
-    
+    z-index: 20;
+    transition: all .2s ease-out;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent; 
+        z-index: -100;
+        transition: all .2s ease-out; 
+    }
+
+    &.scrolled {
+        background-color: transparent;
+        border-color: #f0e8db;
+
+        &::before {
+            background-color: rgba(255, 255, 255, 0.75); 
+            backdrop-filter: blur(4px);
+        }
+    }
+
     .logo {
         width: 125px;
     
@@ -70,11 +95,11 @@
     }
     
     @media screen and (max-width: 1024px) {
-        padding: 1rem 2.5rem;
+        padding: .5rem 2.5rem;
     }
 
     @media screen and (max-width: 600px) {
-        padding: .5rem 1rem;
+        padding: .35rem 1rem;
         
         & > button {
             display: block;
@@ -122,4 +147,18 @@
         }
     }
 }
+
+.placeholder {
+    height: 70px;
+
+    @media screen and (max-width: 1024px) {
+        height: 90px;
+    }
+
+    @media screen and (max-width: 600px) {
+        height: 68px;
+    }
+}
+
+
 
