@@ -9,8 +9,7 @@ export default function Index() {
   const links = ["home", "about", "projects", "contact"];
   const [isLinksDrawerActive, setIsLinksDrawerActive] = useState(false);
   const location = useLocation();
-  // const headerRef = useRef(null);
-  const previousScrollY = useRef(0); // Store previous scroll position
+  const previousScrollY = useRef(0);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -24,18 +23,15 @@ export default function Index() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      const scrollPast5vh = currentScrollY > 5; // Check if scrolled past 5vh
+      const scrollPast5vh = currentScrollY > 5;
 
-      // Add/remove class based on scroll position and previous scroll
       if (scrollPast5vh && previousScrollY.current <= 5) {
-        // headerRef.current.classList.add("scrolled");
         setScrolled(true);
       } else if (!scrollPast5vh && previousScrollY.current > 5) {
-        // headerRef.current.classList.remove("scrolled");
         setScrolled(false);
       }
 
-      previousScrollY.current = currentScrollY; // Update previous scroll
+      previousScrollY.current = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -51,10 +47,7 @@ export default function Index() {
 
   return (
     <>
-      <header
-        // ref={headerRef}
-        className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}
-      >
+      <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
         <div className={styles.logo}>
           <Link to="/">
             <img src="/images/other/logo.png" alt="logo" />
