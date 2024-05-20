@@ -9,7 +9,7 @@ export default function Index() {
       <div className={styles["contact-main"]}>
         <h1>connect with us</h1>
         <p>
-          we&apos;re here to answer your questions and guide your real estate
+          We&apos;re here to answer your questions and guide your real estate
           journey.
         </p>
       </div>
