@@ -19,7 +19,7 @@ export default function Index({ features }) {
       gsap.to(projectFeaturesHeader.current, {
         scrollTrigger: {
           trigger: projectFeaturesHeader.current,
-          start: "top 10%",
+          start: "top 20%",
           end: "+=1050px",
           scrub: 2,
           toggleActions: "restart none none none",
@@ -30,7 +30,7 @@ export default function Index({ features }) {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: projectFeatures.current,
-          start: "top 10%",
+          start: "top 20%",
           end: "+=1050px",
           scrub: true,
           pin: true,
