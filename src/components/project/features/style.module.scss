@@ -153,13 +153,15 @@
 
         .project-features {
             position: static;
+            display: flex;
+            flex-direction: column;
             width: 100%;
 
             .project-feature {
                 position: static;
                 transform: none;
                 padding: 2rem 1.5rem 1.5rem;
-                margin-bottom: 1.5rem;
+                margin-bottom: 0rem;
 
                 .feature-header {
                     div {
