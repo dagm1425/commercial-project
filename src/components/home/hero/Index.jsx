@@ -50,7 +50,7 @@ export default function Index() {
         <p>
           Discover thoughtfully designed apartments, crafted with your
           well-being in mind. Every detail enhances your everyday life,
-          fostering a sense of comfort and serenity
+          fostering a sense of comfort and serenity.
         </p>
         <MainBtn variant="variant1">
           <Link to="/about">learn more</Link>
