@@ -29,13 +29,16 @@ export default function Index() {
             <img src="/images/other/logo.png" alt="logo" />
           </div>
           <div className={styles["socials-wrapper"]}>
-            <a href="#">
+            <a
+              href="https://www.facebook.com/profile.php?id=61559384081074"
+              target="_blank"
+            >
               <FaFacebookF />
             </a>
-            <a href="#">
+            <a href="https://www.instagram.com/asaita00/" target="_blank">
               <FaInstagram />
             </a>
-            <a href="#">
+            <a href="https://twitter.com/Asaita00" target="_blank">
               <FaXTwitter />
             </a>
           </div>
