@@ -1,14 +1,15 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import styles from "./style.module.scss";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MainBtn from "../../common/main-btn/Index";
 import { Link } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
 
 export default function Index() {
   const video = useRef(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     let mm = gsap.matchMedia();
