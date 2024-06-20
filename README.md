@@ -1,8 +1,19 @@
-# React + Vite
+# Commercial website for Asaita Properties PLC, an Ethiopia-based property developer.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### [Visit Website](https://asaitaproperties.com)
 
-Currently, two official plugins are available:
+### Built using:
+- React
+- Sass 
+- GSAP
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Desktop:
+<img src="https://github.com/dagm1425/commercial-project/blob/main/desktop.png" alt="Desktop" width="500">
+
+### Tablet:
+<img src="https://github.com/dagm1425/commercial-project/blob/main/tablet.png" alt="Desktop" width="350">
+
+### Mobile:
+<img src="https://github.com/dagm1425/commercial-project/blob/main/mobile.png" alt="Desktop" width="200">
+
+
