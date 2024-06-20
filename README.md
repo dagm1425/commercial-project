@@ -8,12 +8,14 @@
 - GSAP
 
 ### Desktop:
-<img src="https://github.com/dagm1425/commercial-project/blob/main/desktop.png" alt="Desktop" width="500">
+<img src="https://github.com/dagm1425/commercial-project/blob/main/images/desktop.png" alt="Desktop" width="500">
+
 
 ### Tablet:
-<img src="https://github.com/dagm1425/commercial-project/blob/main/tablet.png" alt="Desktop" width="350">
+<img src="https://github.com/dagm1425/commercial-project/blob/main/images/tablet.png" alt="Tablet" width="350">
+
 
 ### Mobile:
-<img src="https://github.com/dagm1425/commercial-project/blob/main/mobile.png" alt="Desktop" width="200">
+<img src="https://github.com/dagm1425/commercial-project/blob/main/images/mobile.png" alt="Mobile" width="200">
 
 
