@@ -1,6 +1,6 @@
 # Commercial website for Asaita Properties PLC, an Ethiopia-based property developer.
 
-### [Visit Website](https://asaitaproperties.com)
+### <a href="https://asaitaproperties.com" target="_blank">Visit Website</a>
 
 ### Built using:
 - React
