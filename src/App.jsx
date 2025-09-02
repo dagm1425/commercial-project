@@ -7,6 +7,16 @@ import Project from "./pages/Project.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   const projects = [
     {
@@ -70,6 +80,7 @@ function App() {
   return (
     <>
       <Header />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home projects={projects} />} />
         <Route path="/projects" element={<Projects projects={projects} />} />
