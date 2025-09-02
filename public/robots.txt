@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.asaitaproperties.com.et/sitemap.xml
